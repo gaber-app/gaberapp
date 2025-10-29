@@ -71,8 +71,8 @@ export default function Hero() {
     <section ref={sectionRef} className="relative min-h-screen w-full overflow-hidden flex items-center justify-center">
       <div className="absolute inset-0 bg-gradient-hero" />
       
-      <div className="relative mx-auto max-w-7xl px-4 py-32 sm:px-6 md:px-10 lg:px-16 md:py-40">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
+      <div className="relative mx-auto max-w-7xl px-6 py-32 md:py-40">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
           {/* Text Content */}
           <div className="flex-1 max-w-2xl text-left space-y-8">
             <h1 
@@ -104,10 +104,7 @@ export default function Hero() {
 
           {/* Video Section */}
           <div className="flex-shrink-0">
-            <div className="w-full max-w-[300px] sm:max-w-[340px]">
-              <h2 className="mb-4 text-xl font-semibold tracking-tight text-white sm:text-2xl text-center">
-                See It In Action
-              </h2>
+            <div className="w-full max-w-[400px] sm:max-w-[450px] lg:max-w-[500px]">
               <div className="relative aspect-[9/16] overflow-hidden rounded-2xl border border-white/10 bg-background/20 backdrop-blur-sm shadow-2xl">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
