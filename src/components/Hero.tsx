@@ -3,13 +3,11 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 import { Button } from '@/components/ui/button';
-import gaberLogo from '@/assets/gaber-logo.svg';
 
 gsap.registerPlugin(SplitText, useGSAP);
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement | null>(null);
-  const logoRef = useRef<HTMLImageElement | null>(null);
   const headerRef = useRef<HTMLHeadingElement | null>(null);
   const paraRef = useRef<HTMLParagraphElement | null>(null);
   const ctaRef = useRef<HTMLDivElement | null>(null);
@@ -31,9 +29,6 @@ export default function Hero() {
           autoAlpha: 0,
         });
 
-        if (logoRef.current) {
-          gsap.set(logoRef.current, { autoAlpha: 0, y: -20 });
-        }
         if (paraRef.current) {
           gsap.set(paraRef.current, { autoAlpha: 0, y: 20 });
         }
@@ -44,10 +39,6 @@ export default function Hero() {
         const tl = gsap.timeline({
           defaults: { ease: 'power3.out' },
         });
-
-        if (logoRef.current) {
-          tl.to(logoRef.current, { autoAlpha: 1, y: 0, duration: 0.8 }, 0.3);
-        }
 
         tl.to(
           lines,
@@ -79,13 +70,6 @@ export default function Hero() {
   return (
     <section ref={sectionRef} className="relative min-h-screen w-full overflow-hidden flex items-center justify-center">
       <div className="absolute inset-0 bg-gradient-hero" />
-      
-      <img 
-        ref={logoRef}
-        src={gaberLogo} 
-        alt="Gaber" 
-        className="absolute top-6 left-6 h-8 w-auto md:top-8 md:left-10 md:h-10 lg:left-16"
-      />
       
       <div className="relative mx-auto max-w-5xl px-6 py-32 text-center md:px-10 lg:px-16">
 
