@@ -90,7 +90,7 @@ export default function Hero() {
 
         <h1 
           ref={headerRef} 
-          className="mb-8 text-5xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl"
+          className="mb-8 text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl md:whitespace-nowrap lg:text-7xl"
         >
           Connect. Collaborate. Thrive.
         </h1>
