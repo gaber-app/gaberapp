@@ -69,7 +69,7 @@ export default function Hero() {
     });
   };
   return <section ref={sectionRef} className="relative min-h-screen w-full overflow-hidden flex items-center justify-center">
-      <div className="absolute inset-0 bg-gradient-hero" />
+      <div className="absolute inset-0 bg-white" />
       
       <div className="relative w-full px-6 py-32 md:px-10 lg:px-16 md:py-40">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
