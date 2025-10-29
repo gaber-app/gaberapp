@@ -137,10 +137,15 @@ const fragmentShader = `
 
     buf[0] = sigmoid(buf[0]);
     
-    // Use Gaber blue colors: #024BC7 (rgb: 2,75,199) and #035EF9 (rgb: 3,94,249)
-    vec3 color1 = vec3(0.008, 0.294, 0.780); // #024BC7
-    vec3 color2 = vec3(0.012, 0.369, 0.976); // #035EF9
-    vec3 finalColor = mix(color1, color2, buf[0].x);
+    // Use lighter, more contrasting Gaber blues
+    vec3 color1 = vec3(0.4, 0.65, 0.95); // Lighter blue
+    vec3 color2 = vec3(0.2, 0.5, 1.0); // Medium blue
+    vec3 color3 = vec3(0.6, 0.75, 1.0); // Very light blue
+    
+    // Create more contrast
+    float pattern = buf[0].x * 2.0 - 0.5;
+    vec3 finalColor = mix(color1, mix(color2, color3, buf[0].y), pattern);
+    finalColor = pow(finalColor, vec3(0.9)); // Brighten
     
     return vec4(finalColor, 1.0);
   }
