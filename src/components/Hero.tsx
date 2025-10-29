@@ -98,6 +98,30 @@ export default function Hero() {
             <div className="absolute inset-0 -z-0 bg-gradient-to-r from-white via-blue-50 to-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </Button>
         </div>
+
+        <div className="mt-20">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="mb-6 text-2xl font-semibold tracking-tight text-white">
+              See It In Action
+            </h2>
+            <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10 bg-background/20 backdrop-blur-sm shadow-2xl">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm">
+                    <svg
+                      className="h-8 w-8 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                  <p className="text-sm text-white/70">Demo video coming soon</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
