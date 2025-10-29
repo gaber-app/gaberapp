@@ -90,14 +90,14 @@ export default function Hero() {
 
         <h1 
           ref={headerRef} 
-          className="mb-8 text-5xl font-extralight leading-[1.1] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl"
+          className="mb-8 text-5xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl"
         >
           Connect. Collaborate. Thrive.
         </h1>
 
         <p 
           ref={paraRef} 
-          className="mx-auto mb-12 max-w-2xl text-lg font-light leading-relaxed tracking-tight text-muted-foreground sm:text-xl"
+          className="mx-auto mb-12 max-w-2xl text-lg font-light leading-relaxed tracking-tight text-white sm:text-xl"
         >
           The premier professional networking platform uniting Armenian diaspora worldwide. 
           Building bridges, creating opportunities, strengthening our global community.
@@ -107,10 +107,10 @@ export default function Hero() {
           <Button 
             onClick={scrollToForm}
             size="lg"
-            className="group relative overflow-hidden bg-primary px-8 py-6 text-base font-medium text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-[var(--shadow-elegant)]"
+            className="group relative overflow-hidden bg-white px-8 py-6 text-base font-semibold text-primary transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--primary-glow)_/_0.6)]"
           >
-            <span className="relative z-10">Join the Waitlist</span>
-            <div className="absolute inset-0 -z-0 bg-gradient-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            <span className="relative z-10 transition-colors duration-300 group-hover:text-primary-glow">Join the Waitlist</span>
+            <div className="absolute inset-0 -z-0 bg-gradient-to-r from-white via-blue-50 to-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </Button>
         </div>
       </div>

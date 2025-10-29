@@ -78,7 +78,7 @@ export default function About() {
       <div className="mx-auto max-w-6xl">
         <h2 
           ref={headingRef}
-          className="mb-12 text-center text-4xl font-extralight tracking-tight text-foreground sm:text-5xl md:text-6xl"
+          className="mb-12 text-center text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl"
         >
           Our Vision
         </h2>
@@ -87,12 +87,12 @@ export default function About() {
           ref={manifestoRef}
           className="mx-auto mb-24 max-w-3xl text-center"
         >
-          <p className="mb-6 text-lg font-light leading-relaxed text-muted-foreground sm:text-xl">
+          <p className="mb-6 text-lg font-light leading-relaxed text-white sm:text-xl">
             We're building more than a network—we're creating a movement. A space where Armenian 
             professionals worldwide can connect authentically, share knowledge freely, and collaborate 
             meaningfully.
           </p>
-          <p className="text-lg font-light leading-relaxed text-muted-foreground sm:text-xl">
+          <p className="text-lg font-light leading-relaxed text-white sm:text-xl">
             From entrepreneurs to executives, artists to engineers, Gaber brings together the brightest 
             minds in our diaspora, fostering innovation and opportunity across borders.
           </p>
@@ -111,7 +111,7 @@ export default function About() {
               <h3 className="mb-4 text-xl font-medium tracking-tight text-card-foreground">
                 {feature.title}
               </h3>
-              <p className="text-sm font-light leading-relaxed text-muted-foreground">
+              <p className="text-sm font-light leading-relaxed text-white/80">
                 {feature.description}
               </p>
             </div>

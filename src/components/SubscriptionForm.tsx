@@ -84,10 +84,10 @@ export default function SubscriptionForm() {
           <div className="absolute inset-0 bg-gradient-primary opacity-5" />
           
           <div className="relative">
-            <h2 className="mb-4 text-center text-3xl font-extralight tracking-tight text-card-foreground sm:text-4xl">
+            <h2 className="mb-4 text-center text-3xl font-semibold tracking-tight text-card-foreground sm:text-4xl">
               Be Among the First
             </h2>
-            <p className="mb-8 text-center text-base font-light text-muted-foreground sm:text-lg">
+            <p className="mb-8 text-center text-base font-light text-white sm:text-lg">
               Join our exclusive waitlist and get early access to Gaber when we launch.
             </p>
 
@@ -134,7 +134,7 @@ export default function SubscriptionForm() {
               </Button>
             </form>
 
-            <p className="mt-6 text-center text-xs font-light text-muted-foreground">
+            <p className="mt-6 text-center text-xs font-light text-white/70">
               We respect your privacy. Your information will never be shared.
             </p>
           </div>
