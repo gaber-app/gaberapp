@@ -104,7 +104,10 @@ export default function Hero() {
 
           {/* Video Section */}
           <div className="flex-shrink-0">
-            <div className="w-full max-w-[450px] sm:max-w-[500px] lg:max-w-[550px]">
+            <div className="w-full max-w-[300px] sm:max-w-[340px]">
+              <h2 className="mb-4 text-xl font-semibold tracking-tight text-white sm:text-2xl text-center">
+                See It In Action
+              </h2>
               <div className="relative aspect-[9/16] overflow-hidden rounded-2xl border border-white/10 bg-background/20 backdrop-blur-sm shadow-2xl">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
