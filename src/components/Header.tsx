@@ -14,11 +14,10 @@ export default function Header() {
 
       gsap.from(headerRef.current, {
         y: -20,
-        opacity: 0,
+        autoAlpha: 0,
         duration: 0.8,
         ease: 'power3.out',
         delay: 0.5,
-        clearProps: 'all'
       });
     },
     { scope: headerRef }
@@ -32,7 +31,7 @@ export default function Header() {
   return (
     <header 
       ref={headerRef}
-      className="fixed top-0 left-0 right-0 z-[100] bg-background/20 backdrop-blur-md border-b border-white/5 px-6 py-4 md:px-10 lg:px-16"
+      className="fixed top-0 left-0 right-0 z-50 px-6 py-4 md:px-10 lg:px-16"
     >
       <nav className="flex items-center justify-between">
         <img 
