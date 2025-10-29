@@ -74,11 +74,7 @@ export default function About() {
   );
 
   return (
-    <section 
-      id="our-vision"
-      ref={sectionRef} 
-      className="relative py-32 px-6 md:px-10 lg:px-16"
-    >
+    <section ref={sectionRef} className="relative py-32 px-6 md:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl">
         <h2 
           ref={headingRef}
