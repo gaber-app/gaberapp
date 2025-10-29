@@ -2,7 +2,6 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import morphBg from '@/assets/morph-lines-bg.svg';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -47,17 +46,7 @@ export default function About() {
       ref={sectionRef} 
       className="relative py-32 px-6 md:px-10 lg:px-16"
     >
-      <div className="absolute inset-0 bg-white" />
-      <div 
-        className="absolute inset-0 opacity-20 mix-blend-multiply"
-        style={{
-          backgroundImage: `url(${morphBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      />
-      <div className="mx-auto max-w-6xl relative z-10">
+      <div className="mx-auto max-w-6xl">
         <h2 
           ref={headingRef}
           className="mb-12 text-center text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl"

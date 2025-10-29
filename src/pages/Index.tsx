@@ -1,5 +1,6 @@
 import ShaderBackground from '@/components/ShaderBackground';
 import ScrollDarkener from '@/components/ScrollDarkener';
+import ParallaxBackground from '@/components/ParallaxBackground';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -10,6 +11,7 @@ const Index = () => {
     <main className="relative min-h-screen w-full overflow-hidden">
       <ShaderBackground />
       <ScrollDarkener />
+      <ParallaxBackground />
       <Header />
       <Hero />
       <About />

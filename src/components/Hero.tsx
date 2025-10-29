@@ -3,7 +3,6 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 import { Button } from '@/components/ui/button';
-import morphBg from '@/assets/morph-lines-bg.svg';
 gsap.registerPlugin(SplitText, useGSAP);
 export default function Hero() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -70,16 +69,6 @@ export default function Hero() {
     });
   };
   return <section ref={sectionRef} className="relative min-h-screen w-full overflow-hidden flex items-center justify-center">
-      <div className="absolute inset-0 bg-white" />
-      <div 
-        className="absolute inset-0 opacity-20 mix-blend-multiply"
-        style={{
-          backgroundImage: `url(${morphBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      />
       {/* Gradient transition to next section */}
       <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-b from-transparent via-white/50 to-primary/10" />
       
