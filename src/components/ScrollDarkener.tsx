@@ -16,9 +16,9 @@ export default function ScrollDarkener() {
       end: 'bottom bottom',
       onUpdate: (self) => {
         if (overlayRef.current) {
-          // Gradually increase darkness as user scrolls
+          // Gradually increase darkness with dark blue overlay as user scrolls
           const darkness = self.progress * 0.7; // Max 70% darkness
-          overlayRef.current.style.backgroundColor = `rgba(0, 0, 0, ${darkness})`;
+          overlayRef.current.style.backgroundColor = `rgba(15, 17, 31, ${darkness})`; // Dark blue instead of black
         }
       },
     });
