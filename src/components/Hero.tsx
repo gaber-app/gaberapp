@@ -80,13 +80,14 @@ export default function Hero() {
     <section ref={sectionRef} className="relative min-h-screen w-full overflow-hidden flex items-center justify-center">
       <div className="absolute inset-0 bg-gradient-hero" />
       
+      <img 
+        ref={logoRef}
+        src={gaberLogo} 
+        alt="Gaber" 
+        className="absolute top-6 left-6 h-8 w-auto md:top-8 md:left-10 md:h-10 lg:left-16"
+      />
+      
       <div className="relative mx-auto max-w-5xl px-6 py-32 text-center md:px-10 lg:px-16">
-        <img 
-          ref={logoRef}
-          src={gaberLogo} 
-          alt="Gaber" 
-          className="mx-auto mb-12 h-14 w-auto md:h-16"
-        />
 
         <h1 
           ref={headerRef} 
