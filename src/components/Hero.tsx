@@ -77,7 +77,7 @@ export default function Hero() {
               Connect. Collaborate. Thrive.
             </h1>
 
-            <p ref={paraRef} className="text-base font-light leading-relaxed tracking-tight text-foreground sm:text-lg md:text-xl">
+            <p ref={paraRef} className="text-base font-medium leading-relaxed tracking-tight text-foreground sm:text-lg md:text-xl backdrop-blur-md bg-white/30 p-6 rounded-lg">
               The premier professional networking platform uniting Armenian diaspora worldwide. 
               Building bridges, creating opportunities, strengthening our global community.
             </p>
