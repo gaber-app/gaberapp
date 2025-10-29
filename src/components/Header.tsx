@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import gaberLogo from '@/assets/gaber-logo.svg';
+import gaberLogo from '@/assets/gaber-logo-color.svg';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
