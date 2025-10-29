@@ -71,18 +71,18 @@ export default function Hero() {
     <section ref={sectionRef} className="relative min-h-screen w-full overflow-hidden flex items-center justify-center">
       <div className="absolute inset-0 bg-gradient-hero" />
       
-      <div className="relative mx-auto max-w-5xl px-6 py-32 text-center md:px-10 lg:px-16">
+      <div className="relative mx-auto max-w-5xl px-4 py-24 text-center sm:px-6 md:px-10 lg:px-16 md:py-32">
 
         <h1 
           ref={headerRef} 
-          className="mb-8 text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl md:whitespace-nowrap lg:text-7xl"
+          className="mb-6 text-3xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl sm:mb-8"
         >
           Connect. Collaborate. Thrive.
         </h1>
 
         <p 
           ref={paraRef} 
-          className="mx-auto mb-12 max-w-2xl text-lg font-light leading-relaxed tracking-tight text-white sm:text-xl"
+          className="mx-auto mb-10 max-w-2xl text-base font-light leading-relaxed tracking-tight text-white sm:text-lg md:text-xl sm:mb-12 px-2"
         >
           The premier professional networking platform uniting Armenian diaspora worldwide. 
           Building bridges, creating opportunities, strengthening our global community.
@@ -99,9 +99,9 @@ export default function Hero() {
           </Button>
         </div>
 
-        <div className="mt-20">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="mb-6 text-2xl font-semibold tracking-tight text-white">
+        <div className="mt-12 sm:mt-16 md:mt-20">
+          <div className="mx-auto max-w-4xl px-2">
+            <h2 className="mb-4 text-xl font-semibold tracking-tight text-white sm:text-2xl sm:mb-6">
               See It In Action
             </h2>
             <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10 bg-background/20 backdrop-blur-sm shadow-2xl">
