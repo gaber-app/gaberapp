@@ -89,13 +89,13 @@ export default function Header() {
         <div className="flex items-center gap-8">
           <button
             onClick={() => scrollToSection('our-vision')}
-            className="text-sm font-light tracking-tight text-white/90 transition-colors duration-300 hover:text-white"
+            className="text-sm font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
           >
             Our Vision
           </button>
           <button
             onClick={() => scrollToSection('subscription-form')}
-            className="rounded-full border border-white/20 bg-white/10 px-6 py-2.5 text-sm font-light tracking-tight text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:border-white/30"
+            className="rounded-full border border-primary bg-primary/10 px-6 py-2.5 text-sm font-medium tracking-tight text-primary backdrop-blur-sm transition-all duration-300 hover:bg-primary/20 hover:border-primary"
           >
             Join
           </button>
