@@ -31,15 +31,15 @@ All colors MUST be HSL.
     --popover: 236 28% 13%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 220 97% 40%;
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 220 96% 49%;
+    --primary: 220 97% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 220 96% 45%;
 
     --secondary: 235 9% 39%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 240 9% 30%;
-    --muted-foreground: 232 7% 67%;
+    --muted-foreground: 232 7% 75%;
 
     --accent: 220 96% 49%;
     --accent-foreground: 0 0% 98%;
