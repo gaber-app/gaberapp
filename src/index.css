@@ -22,41 +22,41 @@ All colors MUST be HSL.
     --white: 0 0% 98%;
     
     /* Semantic tokens */
-    --background: 240 38% 9%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
 
-    --card: 236 28% 13%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
 
-    --popover: 236 28% 13%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 220 97% 35%;
+    --primary: 220 96% 49%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 220 96% 45%;
+    --primary-glow: 220 96% 60%;
 
     --secondary: 235 9% 39%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 240 9% 30%;
-    --muted-foreground: 232 7% 75%;
+    --muted: 240 9% 90%;
+    --muted-foreground: 0 0% 30%;
 
     --accent: 220 96% 49%;
-    --accent-foreground: 0 0% 98%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 240 9% 30%;
-    --input: 236 28% 13%;
+    --border: 220 96% 49%;
+    --input: 0 0% 100%;
     --ring: 220 96% 49%;
 
     --radius: 1rem;
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(220 96% 49%) 0%, hsl(220 97% 40%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(240 38% 9% / 0) 0%, hsl(236 28% 13%) 100%);
-    --gradient-hero: radial-gradient(circle at 50% 0%, hsl(220 90% 65% / 0.25) 0%, hsl(220 85% 55% / 0.1) 40%, transparent 70%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 96% 49%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 96% 49%) 100%);
     
     /* Shadows */
     --shadow-elegant: 0 10px 40px -10px hsl(220 97% 40% / 0.4);

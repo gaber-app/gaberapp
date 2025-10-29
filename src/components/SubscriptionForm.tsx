@@ -79,15 +79,14 @@ export default function SubscriptionForm() {
       <div className="mx-auto max-w-2xl">
         <div 
           ref={formRef}
-          className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-elegant)] sm:p-12"
+          className="relative overflow-hidden rounded-3xl border-2 border-primary bg-white p-8 shadow-[var(--shadow-elegant)] sm:p-12"
         >
-          <div className="absolute inset-0 bg-gradient-primary opacity-5" />
           
           <div className="relative">
             <h2 className="mb-4 text-center text-3xl font-semibold tracking-tight text-card-foreground sm:text-4xl">
               Be Among the First
             </h2>
-            <p className="mb-8 text-center text-base font-light text-white sm:text-lg">
+            <p className="mb-8 text-center text-base font-light text-card-foreground sm:text-lg">
               Join our exclusive waitlist and get early access to Gaber when we launch.
             </p>
 
@@ -103,7 +102,7 @@ export default function SubscriptionForm() {
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="John Doe"
                   required
-                  className="h-12 bg-input/50 text-base backdrop-blur-sm transition-all duration-300 focus:bg-input"
+                  className="h-12 bg-white text-base border-2 border-gray-200 transition-all duration-300 focus:border-primary"
                 />
               </div>
 
@@ -118,7 +117,7 @@ export default function SubscriptionForm() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="john@example.com"
                   required
-                  className="h-12 bg-input/50 text-base backdrop-blur-sm transition-all duration-300 focus:bg-input"
+                  className="h-12 bg-white text-base border-2 border-gray-200 transition-all duration-300 focus:border-primary"
                 />
               </div>
 
@@ -134,7 +133,7 @@ export default function SubscriptionForm() {
               </Button>
             </form>
 
-            <p className="mt-6 text-center text-xs font-light text-white/70">
+            <p className="mt-6 text-center text-xs font-light text-muted-foreground">
               We respect your privacy. Your information will never be shared.
             </p>
           </div>

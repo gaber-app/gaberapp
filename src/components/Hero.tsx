@@ -79,15 +79,14 @@ export default function Hero() {
               Connect. Collaborate. Thrive.
             </h1>
 
-            <p ref={paraRef} className="text-base font-light leading-relaxed tracking-tight text-white sm:text-lg md:text-xl">
+            <p ref={paraRef} className="text-base font-light leading-relaxed tracking-tight text-foreground sm:text-lg md:text-xl">
               The premier professional networking platform uniting Armenian diaspora worldwide. 
               Building bridges, creating opportunities, strengthening our global community.
             </p>
 
             <div ref={ctaRef}>
-              <Button onClick={scrollToForm} size="lg" className="group relative overflow-hidden bg-white px-8 py-6 text-base font-semibold text-primary transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--primary-glow)_/_0.6)]">
-                <span className="relative z-10 transition-colors duration-300 group-hover:text-primary-glow">Join the Waitlist</span>
-                <div className="absolute inset-0 -z-0 bg-gradient-to-r from-white via-blue-50 to-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <Button onClick={scrollToForm} size="lg" className="group relative overflow-hidden bg-primary px-8 py-6 text-base font-semibold text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--primary-glow)_/_0.6)]">
+                <span className="relative z-10">Join the Waitlist</span>
               </Button>
             </div>
           </div>
