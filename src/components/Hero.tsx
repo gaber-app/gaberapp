@@ -80,6 +80,8 @@ export default function Hero() {
           backgroundRepeat: 'no-repeat'
         }}
       />
+      {/* Gradient transition to next section */}
+      <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-b from-transparent via-white/50 to-primary/10" />
       
       <div className="relative w-full px-6 py-32 md:px-10 lg:px-16 md:py-40">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">

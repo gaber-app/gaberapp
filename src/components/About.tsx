@@ -44,8 +44,10 @@ export default function About() {
     <section 
       id="our-vision"
       ref={sectionRef} 
-      className="relative py-32 px-6 md:px-10 lg:px-16"
+      className="relative py-32 px-6 md:px-10 lg:px-16 bg-gradient-to-b from-primary/10 via-primary/30 to-primary"
     >
+      {/* Gradient transition from previous section */}
+      <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-white/30 to-transparent" />
       <div className="mx-auto max-w-6xl">
         <h2 
           ref={headingRef}
@@ -58,12 +60,12 @@ export default function About() {
           ref={manifestoRef}
           className="mx-auto max-w-3xl text-center"
         >
-          <p className="mb-6 text-lg font-light leading-relaxed text-white sm:text-xl">
+          <p className="mb-6 text-lg font-light leading-relaxed text-foreground sm:text-xl">
             We're building more than a network—we're creating a movement. A space where Armenian 
             professionals worldwide can connect authentically, share knowledge freely, and collaborate 
             meaningfully.
           </p>
-          <p className="text-lg font-light leading-relaxed text-white sm:text-xl">
+          <p className="text-lg font-light leading-relaxed text-foreground sm:text-xl">
             From entrepreneurs to executives, artists to engineers, Gaber brings together the brightest 
             minds in our diaspora, fostering innovation and opportunity across borders.
           </p>
