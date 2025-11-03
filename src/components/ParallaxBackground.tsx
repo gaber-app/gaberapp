@@ -9,18 +9,32 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 export default function ParallaxBackground() {
   const bgRef = useRef<HTMLDivElement>(null);
 
+  useGSAP(() => {
+    if (!bgRef.current) return;
+
+    gsap.to(bgRef.current, {
+      scrollTrigger: {
+        trigger: document.body,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 1,
+      },
+      y: '30%',
+      ease: 'none',
+    });
+  });
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden">
+    <div className="fixed inset-0 -z-10 overflow-hidden bg-white">
       <div
         ref={bgRef}
-        className="absolute inset-0 opacity-20 mix-blend-multiply"
+        className="absolute inset-0 w-full h-full opacity-20 mix-blend-multiply"
         style={{
           backgroundImage: `url(${morphBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          transform: 'translateY(-10%)',
+          willChange: 'transform',
         }}
       />
     </div>

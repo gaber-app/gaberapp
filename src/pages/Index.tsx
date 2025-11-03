@@ -1,4 +1,3 @@
-import ShaderBackground from '@/components/ShaderBackground';
 import ParallaxBackground from '@/components/ParallaxBackground';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -8,7 +7,6 @@ import SubscriptionForm from '@/components/SubscriptionForm';
 const Index = () => {
   return (
     <main className="relative min-h-screen w-full">
-      <ShaderBackground />
       <ParallaxBackground />
       <Header />
       <Hero />
