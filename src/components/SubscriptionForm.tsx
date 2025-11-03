@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
+import { supabase } from '@/integrations/supabase/client';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -56,8 +57,18 @@ export default function SubscriptionForm() {
       const validated = formSchema.parse({ firstName, lastName, email });
       setIsSubmitting(true);
       
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Save to database
+      const { error } = await supabase
+        .from('subscriptions')
+        .insert({
+          first_name: validated.firstName,
+          last_name: validated.lastName,
+          email: validated.email,
+        });
+
+      if (error) {
+        throw new Error(error.message);
+      }
       
       toast({
         title: "Welcome to Gaber!",
@@ -77,6 +88,12 @@ export default function SubscriptionForm() {
           }
         });
         setErrors(fieldErrors);
+      } else {
+        toast({
+          title: "Error",
+          description: "Failed to join the waitlist. Please try again.",
+          variant: "destructive",
+        });
       }
     } finally {
       setIsSubmitting(false);
