@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Link } from 'react-router-dom';
 import gaberLogo from '@/assets/gaber-logo-color.svg';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -114,16 +115,22 @@ export default function Header() {
         <div className="flex items-center gap-4 md:gap-8">
           <button
             onClick={() => scrollToSection('our-vision')}
-            className="text-xs md:text-sm font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
+            className="text-base font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
           >
             Our Vision
           </button>
           <button
             onClick={() => scrollToSection('subscription-form')}
-            className="rounded-full border border-primary bg-primary/10 px-4 py-2 md:px-6 md:py-2.5 text-xs md:text-sm font-medium tracking-tight text-primary backdrop-blur-sm transition-all duration-300 hover:bg-primary/20 hover:border-primary"
+            className="rounded-full border border-primary bg-primary/10 px-4 py-2 md:px-6 md:py-2.5 text-base font-medium tracking-tight text-primary backdrop-blur-sm transition-all duration-300 hover:bg-primary/20 hover:border-primary"
           >
             Join
           </button>
+          <Link
+            to="/auth"
+            className="text-base font-medium tracking-tight text-muted-foreground transition-colors duration-300 hover:text-primary"
+          >
+            Admin
+          </Link>
         </div>
       </nav>
     </header>
