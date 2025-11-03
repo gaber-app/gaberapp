@@ -90,7 +90,7 @@ export default function Header() {
   return (
     <header 
       ref={headerRef}
-      className="fixed top-0 left-0 right-0 z-50 px-4 py-3 md:px-6 md:py-4 lg:px-16"
+      className="fixed top-0 left-0 right-0 z-50 px-4 py-3 md:px-6 md:py-4 lg:px-16 backdrop-blur-md bg-white/70"
     >
       <nav className="flex items-center justify-between">
         <img 
@@ -103,7 +103,7 @@ export default function Header() {
         <div className="flex items-center gap-4 md:gap-8">
           <button
             onClick={() => scrollToSection('our-vision')}
-            className="text-sm font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
+            className="text-xs md:text-sm font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
           >
             Our Vision
           </button>

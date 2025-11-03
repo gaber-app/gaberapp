@@ -73,11 +73,11 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
           {/* Text Content */}
           <div className="flex-1 max-w-2xl text-left space-y-8">
-            <h1 ref={headerRef} className="text-3xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+            <h1 ref={headerRef} className="text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
               Connect. Collaborate. Thrive.
             </h1>
 
-            <p ref={paraRef} className="text-base font-medium leading-relaxed tracking-tight text-foreground sm:text-lg md:text-xl py-6">
+            <p ref={paraRef} className="text-lg font-medium leading-relaxed tracking-tight text-foreground sm:text-lg md:text-xl py-6">
               The premier professional networking platform uniting Armenian diaspora worldwide. 
               Building bridges, creating opportunities, strengthening our global community.
             </p>

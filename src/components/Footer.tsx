@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-primary text-primary-foreground py-12 px-4 md:px-6 lg:px-16">
-      <div className="container mx-auto max-w-6xl">
+      <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Social Links */}
           <div className="flex flex-col items-center md:items-start">
