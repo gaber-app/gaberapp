@@ -41,8 +41,8 @@ export default function Header() {
       if (headerRef.current) {
         gsap.to(headerRef.current, {
           y: -100,
-          duration: 0.4,
-          ease: 'power3.inOut'
+          duration: 0.28,
+          ease: 'power3.in'
         });
       }
     };
