@@ -93,7 +93,7 @@ export default function Header() {
         <div className="flex items-center gap-4 md:gap-8">
           <button
             onClick={() => scrollToSection('our-vision')}
-            className="hidden sm:block text-sm font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
+            className="text-sm font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
           >
             Our Vision
           </button>
