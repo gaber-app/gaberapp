@@ -104,7 +104,7 @@ export default function SubscriptionForm() {
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
                 <div>
                   <label htmlFor="firstName" className="mb-2 block text-sm font-light text-card-foreground">
                     First Name
