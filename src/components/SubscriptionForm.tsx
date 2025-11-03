@@ -12,7 +12,12 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const formSchema = z.object({
   firstName: z.string().trim().min(2, { message: "Please enter your first name" }).max(50),
   lastName: z.string().trim().min(2, { message: "Please enter your last name" }).max(50),
-  email: z.string().trim().email({ message: "Please enter a valid email address" }).max(255),
+  email: z.string()
+    .trim()
+    .min(1, { message: "Email is required" })
+    .email({ message: "Please enter a valid email address" })
+    .regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, { message: "Email must include @ and a valid domain (e.g., user@domain.com)" })
+    .max(255),
 });
 
 export default function SubscriptionForm() {
