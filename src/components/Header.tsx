@@ -51,10 +51,10 @@ export default function Header() {
       const currentScrollY = window.scrollY;
       const scrollDiff = Math.abs(currentScrollY - lastScrollY);
       
-      // Only trigger if scrolled more than 10px for smoother experience
-      if (scrollDiff < 10) return;
+      // Trigger after just 3px for short pages
+      if (scrollDiff < 3) return;
       
-      if (currentScrollY < 50) {
+      if (currentScrollY < 20) {
         showHeader();
       } else if (currentScrollY > lastScrollY) {
         hideHeader();
@@ -80,26 +80,26 @@ export default function Header() {
   return (
     <header 
       ref={headerRef}
-      className="fixed top-0 left-0 right-0 z-50 px-6 py-4 md:px-10 lg:px-16"
+      className="fixed top-0 left-0 right-0 z-50 px-4 py-3 md:px-6 md:py-4 lg:px-16"
     >
       <nav className="flex items-center justify-between">
         <img 
           src={gaberLogo} 
           alt="Gaber" 
-          className="h-11 w-auto cursor-pointer"
+          className="h-8 w-auto cursor-pointer md:h-10"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         />
 
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-4 md:gap-8">
           <button
             onClick={() => scrollToSection('our-vision')}
-            className="text-sm font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
+            className="hidden sm:block text-sm font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
           >
             Our Vision
           </button>
           <button
             onClick={() => scrollToSection('subscription-form')}
-            className="rounded-full border border-primary bg-primary/10 px-6 py-2.5 text-sm font-medium tracking-tight text-primary backdrop-blur-sm transition-all duration-300 hover:bg-primary/20 hover:border-primary"
+            className="rounded-full border border-primary bg-primary/10 px-4 py-2 md:px-6 md:py-2.5 text-xs md:text-sm font-medium tracking-tight text-primary backdrop-blur-sm transition-all duration-300 hover:bg-primary/20 hover:border-primary"
           >
             Join
           </button>
