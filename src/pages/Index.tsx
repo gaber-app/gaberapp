@@ -8,8 +8,6 @@ import SubscriptionForm from '@/components/SubscriptionForm';
 const Index = () => {
   return (
     <main className="relative min-h-screen w-full overflow-hidden">
-      <ShaderBackground />
-      <ParallaxBackground />
       <Header />
       <Hero />
       <About />
