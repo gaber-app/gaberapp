@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Social Links */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-start">
             <h3 className="font-semibold mb-4">Connect With Us</h3>
             <div className="flex gap-4">
               <a
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
 
           {/* Email */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-start">
             <h3 className="font-semibold mb-4">Contact</h3>
             <a
               href="mailto:contact@example.com"
@@ -45,9 +45,9 @@ const Footer = () => {
           </div>
 
           {/* Legal Links */}
-          <div className="flex flex-col items-center md:items-end">
+          <div className="flex flex-col items-start">
             <h3 className="font-semibold mb-4">Legal</h3>
-            <div className="flex flex-col gap-2 text-center md:text-right">
+            <div className="flex flex-col gap-2 text-left">
               <a
                 href="/terms"
                 className="hover:opacity-80 transition-opacity"
