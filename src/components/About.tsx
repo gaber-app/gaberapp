@@ -46,7 +46,7 @@ export default function About() {
       ref={sectionRef} 
       className="relative py-32 px-6 md:px-10 lg:px-16"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="max-w-6xl">
         <h2 
           ref={headingRef}
           className="mb-12 text-left text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl"
