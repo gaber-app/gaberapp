@@ -7,7 +7,7 @@ import SubscriptionForm from '@/components/SubscriptionForm';
 
 const Index = () => {
   return (
-    <main className="relative min-h-screen w-full overflow-hidden">
+    <main className="relative min-h-screen w-full">
       <ShaderBackground />
       <ParallaxBackground />
       <Header />
