@@ -90,7 +90,7 @@ export default function Header() {
   return (
     <header 
       ref={headerRef}
-      className="fixed top-0 left-0 right-0 z-50 px-4 py-3 md:px-6 md:py-4 lg:px-16 border-b border-white/20 shadow-sm overflow-hidden"
+      className="fixed top-0 left-0 right-0 z-50 px-4 py-3 md:px-6 md:py-4 lg:px-16 border-b border-white/20 overflow-hidden"
     >
       <div 
         className="absolute inset-0 -z-10 backdrop-blur-xl"
