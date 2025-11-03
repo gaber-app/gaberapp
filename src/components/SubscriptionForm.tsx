@@ -62,6 +62,7 @@ export default function SubscriptionForm() {
       toast({
         title: "Welcome to Gaber!",
         description: "You're on the waitlist. We'll be in touch soon.",
+        duration: 5000,
       });
       
       setFirstName('');
