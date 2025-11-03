@@ -58,12 +58,12 @@ export default function About() {
           ref={manifestoRef}
           className="mx-auto max-w-3xl text-center"
         >
-          <p className="mb-6 text-lg font-medium leading-relaxed text-foreground sm:text-xl backdrop-blur-md bg-white/30 p-6 rounded-lg">
+          <p className="mb-6 text-lg font-medium leading-relaxed text-foreground sm:text-xl">
             We're building more than a network—we're creating a movement. A space where Armenian 
             professionals worldwide can connect authentically, share knowledge freely, and collaborate 
             meaningfully.
           </p>
-          <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl backdrop-blur-md bg-white/30 p-6 rounded-lg">
+          <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl">
             From entrepreneurs to executives, artists to engineers, Gaber brings together the brightest 
             minds in our diaspora, fostering innovation and opportunity across borders.
           </p>
