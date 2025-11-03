@@ -90,8 +90,19 @@ export default function Header() {
   return (
     <header 
       ref={headerRef}
-      className="fixed top-0 left-0 right-0 z-50 px-4 py-3 md:px-6 md:py-4 lg:px-16 backdrop-blur-xl bg-white/15 border-b border-white/20 shadow-sm"
+      className="fixed top-0 left-0 right-0 z-50 px-4 py-3 md:px-6 md:py-4 lg:px-16 border-b border-white/20 shadow-sm overflow-hidden"
     >
+      <div 
+        className="absolute inset-0 -z-10 backdrop-blur-xl"
+        style={{
+          background: 'linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4))',
+          maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))',
+          WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))',
+        }}
+      />
+      <div 
+        className="absolute inset-0 -z-10 bg-white/10"
+      />
       <nav className="flex items-center justify-between">
         <img 
           src={gaberLogo} 
