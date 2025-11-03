@@ -21,6 +21,7 @@ export default function SubscriptionForm() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
+  const [errors, setErrors] = useState<{ firstName?: string; lastName?: string; email?: string }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -44,6 +45,7 @@ export default function SubscriptionForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrors({});
     
     try {
       const validated = formSchema.parse({ firstName, lastName, email });
@@ -62,11 +64,13 @@ export default function SubscriptionForm() {
       setEmail('');
     } catch (error) {
       if (error instanceof z.ZodError) {
-        toast({
-          title: "Validation Error",
-          description: error.errors[0].message,
-          variant: "destructive",
+        const fieldErrors: { firstName?: string; lastName?: string; email?: string } = {};
+        error.errors.forEach((err) => {
+          if (err.path[0]) {
+            fieldErrors[err.path[0] as keyof typeof fieldErrors] = err.message;
+          }
         });
+        setErrors(fieldErrors);
       }
     } finally {
       setIsSubmitting(false);
@@ -103,11 +107,20 @@ export default function SubscriptionForm() {
                     id="firstName"
                     type="text"
                     value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
+                    onChange={(e) => {
+                      setFirstName(e.target.value);
+                      if (errors.firstName) {
+                        setErrors(prev => ({ ...prev, firstName: undefined }));
+                      }
+                    }}
                     placeholder="John"
-                    required
-                    className="h-12 bg-white text-base border-2 border-gray-200 transition-all duration-300 focus:border-primary"
+                    className={`h-12 bg-white text-base border-2 transition-all duration-300 focus:border-primary ${
+                      errors.firstName ? 'border-destructive focus:border-destructive' : 'border-gray-200'
+                    }`}
                   />
+                  {errors.firstName && (
+                    <p className="mt-1.5 text-sm text-destructive">{errors.firstName}</p>
+                  )}
                 </div>
                 
                 <div>
@@ -118,11 +131,20 @@ export default function SubscriptionForm() {
                     id="lastName"
                     type="text"
                     value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
+                    onChange={(e) => {
+                      setLastName(e.target.value);
+                      if (errors.lastName) {
+                        setErrors(prev => ({ ...prev, lastName: undefined }));
+                      }
+                    }}
                     placeholder="Doe"
-                    required
-                    className="h-12 bg-white text-base border-2 border-gray-200 transition-all duration-300 focus:border-primary"
+                    className={`h-12 bg-white text-base border-2 transition-all duration-300 focus:border-primary ${
+                      errors.lastName ? 'border-destructive focus:border-destructive' : 'border-gray-200'
+                    }`}
                   />
+                  {errors.lastName && (
+                    <p className="mt-1.5 text-sm text-destructive">{errors.lastName}</p>
+                  )}
                 </div>
               </div>
 
@@ -134,11 +156,20 @@ export default function SubscriptionForm() {
                   id="email"
                   type="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (errors.email) {
+                      setErrors(prev => ({ ...prev, email: undefined }));
+                    }
+                  }}
                   placeholder="john@example.com"
-                  required
-                  className="h-12 bg-white text-base border-2 border-gray-200 transition-all duration-300 focus:border-primary"
+                  className={`h-12 bg-white text-base border-2 transition-all duration-300 focus:border-primary ${
+                    errors.email ? 'border-destructive focus:border-destructive' : 'border-gray-200'
+                  }`}
                 />
+                {errors.email && (
+                  <p className="mt-1.5 text-sm text-destructive">{errors.email}</p>
+                )}
               </div>
 
               <Button
