@@ -12,29 +12,35 @@ export default function ParallaxBackground() {
   useGSAP(() => {
     if (!bgRef.current) return;
 
-    gsap.to(bgRef.current, {
-      scrollTrigger: {
-        trigger: document.body,
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: 1,
-      },
-      y: '30%',
-      ease: 'none',
-    });
+    gsap.fromTo(bgRef.current, 
+      { y: '-15%' },
+      {
+        scrollTrigger: {
+          trigger: document.body,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 1,
+        },
+        y: '15%',
+        ease: 'none',
+      }
+    );
   });
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden bg-white">
       <div
         ref={bgRef}
-        className="absolute inset-0 w-full h-full opacity-20 mix-blend-multiply"
+        className="absolute w-full opacity-20 mix-blend-multiply"
         style={{
           backgroundImage: `url(${morphBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           willChange: 'transform',
+          top: '-15%',
+          bottom: '-15%',
+          height: '130%',
         }}
       />
     </div>
