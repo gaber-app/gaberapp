@@ -49,14 +49,14 @@ export default function About() {
       <div className="mx-auto max-w-6xl">
         <h2 
           ref={headingRef}
-          className="mb-12 text-center text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl"
+          className="mb-12 text-left text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl"
         >
           Our Vision
         </h2>
 
         <div 
           ref={manifestoRef}
-          className="mx-auto max-w-3xl text-center"
+          className="max-w-2xl text-left"
         >
           <p className="mb-6 text-lg font-medium leading-relaxed text-foreground sm:text-xl">
             We're building more than a network—we're creating a movement. A space where Armenian 
