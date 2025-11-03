@@ -10,14 +10,16 @@ import { z } from 'zod';
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const formSchema = z.object({
-  fullName: z.string().trim().min(2, { message: "Please enter your full name" }).max(100),
+  firstName: z.string().trim().min(2, { message: "Please enter your first name" }).max(50),
+  lastName: z.string().trim().min(2, { message: "Please enter your last name" }).max(50),
   email: z.string().trim().email({ message: "Please enter a valid email address" }).max(255),
 });
 
 export default function SubscriptionForm() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const formRef = useRef<HTMLDivElement | null>(null);
-  const [fullName, setFullName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -44,7 +46,7 @@ export default function SubscriptionForm() {
     e.preventDefault();
     
     try {
-      const validated = formSchema.parse({ fullName, email });
+      const validated = formSchema.parse({ firstName, lastName, email });
       setIsSubmitting(true);
       
       // Simulate API call
@@ -55,7 +57,8 @@ export default function SubscriptionForm() {
         description: "You're on the waitlist. We'll be in touch soon.",
       });
       
-      setFullName('');
+      setFirstName('');
+      setLastName('');
       setEmail('');
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -91,19 +94,36 @@ export default function SubscriptionForm() {
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="fullName" className="mb-2 block text-sm font-light text-card-foreground">
-                  Full Name
-                </label>
-                <Input
-                  id="fullName"
-                  type="text"
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                  placeholder="John Doe"
-                  required
-                  className="h-12 bg-white text-base border-2 border-gray-200 transition-all duration-300 focus:border-primary"
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="firstName" className="mb-2 block text-sm font-light text-card-foreground">
+                    First Name
+                  </label>
+                  <Input
+                    id="firstName"
+                    type="text"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    placeholder="John"
+                    required
+                    className="h-12 bg-white text-base border-2 border-gray-200 transition-all duration-300 focus:border-primary"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="lastName" className="mb-2 block text-sm font-light text-card-foreground">
+                    Last Name
+                  </label>
+                  <Input
+                    id="lastName"
+                    type="text"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    placeholder="Doe"
+                    required
+                    className="h-12 bg-white text-base border-2 border-gray-200 transition-all duration-300 focus:border-primary"
+                  />
+                </div>
               </div>
 
               <div>
