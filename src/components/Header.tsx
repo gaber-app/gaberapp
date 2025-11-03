@@ -95,13 +95,13 @@ export default function Header() {
       <div 
         className="absolute inset-0 -z-10 backdrop-blur-xl"
         style={{
-          background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4))',
+          background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.7))',
           maskImage: 'linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))',
           WebkitMaskImage: 'linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))',
         }}
       />
       <div 
-        className="absolute inset-0 -z-10 bg-white/10"
+        className="absolute inset-0 -z-10 bg-white/25"
       />
       <nav className="flex items-center justify-between">
         <img 
