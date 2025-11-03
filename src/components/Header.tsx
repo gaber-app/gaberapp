@@ -26,12 +26,14 @@ export default function Header() {
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
+    let ticking = false;
     
     const showHeader = () => {
       if (headerRef.current) {
         gsap.to(headerRef.current, {
           y: 0,
-          duration: 0.15,
+          autoAlpha: 1,
+          duration: 0.3,
           ease: 'power3.out'
         });
       }
@@ -40,8 +42,9 @@ export default function Header() {
     const hideHeader = () => {
       if (headerRef.current) {
         gsap.to(headerRef.current, {
-          y: -100,
-          duration: 0.15,
+          y: -120,
+          autoAlpha: 0,
+          duration: 0.3,
           ease: 'power3.in'
         });
       }
@@ -51,10 +54,9 @@ export default function Header() {
       const currentScrollY = window.scrollY;
       const scrollDiff = Math.abs(currentScrollY - lastScrollY);
       
-      // Trigger after just 3px for short pages
-      if (scrollDiff < 3) return;
+      if (scrollDiff < 50) return;
       
-      if (currentScrollY < 50) {
+      if (currentScrollY < 100) {
         showHeader();
       } else if (currentScrollY > lastScrollY) {
         hideHeader();
@@ -63,12 +65,20 @@ export default function Header() {
       }
       
       lastScrollY = currentScrollY;
+      ticking = false;
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    const requestTick = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(handleScroll);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', requestTick, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', requestTick);
     };
   }, []);
 

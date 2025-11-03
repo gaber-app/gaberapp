@@ -13,7 +13,7 @@ export default function ParallaxBackground() {
     if (!bgRef.current) return;
 
     gsap.fromTo(bgRef.current, 
-      { y: '-25%' },
+      { y: '-50%' },
       {
         scrollTrigger: {
           trigger: document.body,
@@ -21,7 +21,7 @@ export default function ParallaxBackground() {
           end: 'bottom bottom',
           scrub: 1,
         },
-        y: '25%',
+        y: '50%',
         ease: 'none',
       }
     );
@@ -38,9 +38,9 @@ export default function ParallaxBackground() {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           willChange: 'transform',
-          top: '-25%',
-          bottom: '-25%',
-          height: '150%',
+          top: '-50%',
+          bottom: '-50%',
+          height: '200%',
         }}
       />
     </div>
