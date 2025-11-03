@@ -90,7 +90,7 @@ export default function Header() {
   return (
     <header 
       ref={headerRef}
-      className="fixed top-0 left-0 right-0 z-50 px-4 py-3 md:px-6 md:py-4 lg:px-16 backdrop-blur-md bg-white/70"
+      className="fixed top-0 left-0 right-0 z-50 px-4 py-3 md:px-6 md:py-4 lg:px-16 backdrop-blur-xl bg-white/30"
     >
       <nav className="flex items-center justify-between">
         <img 
