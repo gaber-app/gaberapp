@@ -31,7 +31,7 @@ export default function Header() {
       if (headerRef.current) {
         gsap.to(headerRef.current, {
           y: 0,
-          duration: 0.4,
+          duration: 0.15,
           ease: 'power3.out'
         });
       }
@@ -41,7 +41,7 @@ export default function Header() {
       if (headerRef.current) {
         gsap.to(headerRef.current, {
           y: -100,
-          duration: 0.28,
+          duration: 0.15,
           ease: 'power3.in'
         });
       }
@@ -54,7 +54,7 @@ export default function Header() {
       // Trigger after just 3px for short pages
       if (scrollDiff < 3) return;
       
-      if (currentScrollY < 20) {
+      if (currentScrollY < 50) {
         showHeader();
       } else if (currentScrollY > lastScrollY) {
         hideHeader();
