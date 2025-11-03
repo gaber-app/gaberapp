@@ -31,7 +31,7 @@ export default function Header() {
       if (headerRef.current) {
         gsap.to(headerRef.current, {
           y: 0,
-          duration: 0.3,
+          duration: 0.15,
           ease: 'power2.out'
         });
       }
@@ -41,16 +41,20 @@ export default function Header() {
       if (headerRef.current) {
         gsap.to(headerRef.current, {
           y: -100,
-          duration: 0.3,
-          ease: 'power2.in'
+          duration: 0.15,
+          ease: 'power2.out'
         });
       }
     };
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const scrollDiff = Math.abs(currentScrollY - lastScrollY);
       
-      if (currentScrollY < 100) {
+      // Only trigger if scrolled more than 5px for better responsiveness
+      if (scrollDiff < 5) return;
+      
+      if (currentScrollY < 50) {
         showHeader();
       } else if (currentScrollY > lastScrollY) {
         hideHeader();
