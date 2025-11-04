@@ -1,4 +1,4 @@
-import { Users, UserPlus } from "lucide-react";
+import { Users, UserPlus, Settings } from "lucide-react";
 import { NavLink, useLocation } from "react-router-dom";
 import {
   Sidebar,
@@ -15,6 +15,7 @@ import {
 const menuItems = [
   { title: "Subscriptions", url: "/admin/subscriptions", icon: UserPlus },
   { title: "Users", url: "/admin/users", icon: Users },
+  { title: "Settings", url: "/admin/settings", icon: Settings },
 ];
 
 export function AdminSidebar() {

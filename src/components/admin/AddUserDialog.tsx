@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { supabase } from '@/integrations/supabase/client';
+import { Eye, EyeOff } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -46,6 +47,7 @@ interface AddUserDialogProps {
 
 export function AddUserDialog({ open, onOpenChange, onUserAdded }: AddUserDialogProps) {
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const { toast } = useToast();
 
   const form = useForm<UserFormData>({
@@ -61,28 +63,16 @@ export function AddUserDialog({ open, onOpenChange, onUserAdded }: AddUserDialog
     setLoading(true);
 
     try {
-      // Create user using Supabase admin API
-      const { data: authData, error: authError } = await supabase.auth.admin.createUser({
-        email: data.email,
-        password: data.password,
-        email_confirm: true,
+      // Call edge function to create user
+      const { data: responseData, error } = await supabase.functions.invoke('create-admin-user', {
+        body: {
+          email: data.email,
+          password: data.password,
+          role: data.role,
+        },
       });
 
-      if (authError) throw authError;
-
-      if (!authData.user) {
-        throw new Error('User creation failed');
-      }
-
-      // Update role if admin
-      if (data.role === 'admin') {
-        const { error: roleError } = await supabase
-          .from('user_roles')
-          .update({ role: 'admin' })
-          .eq('user_id', authData.user.id);
-
-        if (roleError) throw roleError;
-      }
+      if (error) throw error;
 
       toast({
         title: 'Success',
@@ -90,6 +80,7 @@ export function AddUserDialog({ open, onOpenChange, onUserAdded }: AddUserDialog
       });
 
       form.reset();
+      setShowPassword(false);
       onOpenChange(false);
       onUserAdded();
     } catch (error: any) {
@@ -141,12 +132,22 @@ export function AddUserDialog({ open, onOpenChange, onUserAdded }: AddUserDialog
                 <FormItem>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input
-                      type="password"
-                      placeholder="••••••••"
-                      {...field}
-                      disabled={loading}
-                    />
+                    <div className="relative">
+                      <Input
+                        type={showPassword ? "text" : "password"}
+                        placeholder="••••••••"
+                        {...field}
+                        disabled={loading}
+                        className="pr-10"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                      </button>
+                    </div>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
