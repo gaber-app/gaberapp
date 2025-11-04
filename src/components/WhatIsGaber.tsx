@@ -87,10 +87,6 @@ export default function WhatIsGaber() {
               </CardContent>
             </Card>
           </div>
-
-          <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl">
-            In short, the Gaber app is a tool that harnesses the collective talent and shared culture of Armenians to build a more prosperous future.
-          </p>
         </div>
       </div>
     </section>;
