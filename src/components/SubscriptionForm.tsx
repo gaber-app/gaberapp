@@ -7,7 +7,6 @@ import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
 import { supabase } from '@/integrations/supabase/client';
-import { GlowingEffect } from '@/components/ui/glowing-effect';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -120,15 +119,6 @@ export default function SubscriptionForm() {
           ref={formRef}
           className="relative overflow-hidden rounded-3xl border-2 border-primary bg-white p-8 shadow-[var(--shadow-elegant)] sm:p-12"
         >
-          <GlowingEffect
-            spread={40}
-            glow={true}
-            disabled={false}
-            proximity={80}
-            inactiveZone={0.2}
-            borderWidth={2}
-            movementDuration={1.5}
-          />
           
           <div className="relative">
             <h2 className="mb-4 text-center text-3xl font-semibold tracking-tight text-card-foreground sm:text-4xl">
