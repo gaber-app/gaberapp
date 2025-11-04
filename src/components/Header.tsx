@@ -50,7 +50,7 @@ export default function Header() {
         <img 
           src={gaberLogo} 
           alt="Gaber" 
-          className="h-8 w-auto cursor-pointer md:h-10"
+          className="h-8 w-auto cursor-pointer md:h-10 pl-1"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         />
 
