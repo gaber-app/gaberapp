@@ -114,7 +114,7 @@ export default function SubscriptionForm() {
       ref={sectionRef} 
       className="relative pt-24 pb-32 px-4 md:px-6 lg:px-16"
     >
-      <div className="mx-auto max-w-2xl">
+      <div className="mx-auto max-w-6xl">
         <div 
           ref={formRef}
           className="relative overflow-hidden rounded-3xl border-2 border-primary bg-white p-8 shadow-[var(--shadow-elegant)] sm:p-12"
