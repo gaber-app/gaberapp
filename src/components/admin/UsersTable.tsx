@@ -83,12 +83,27 @@ export function UsersTable({ profiles, userRoles, onRolesUpdate }: UsersTablePro
   };
 
   const updateUserRole = async (userId: string, newRole: 'admin' | 'user') => {
-    const { error } = await supabase
+    // Delete existing role(s)
+    const { error: deleteError } = await supabase
       .from('user_roles')
-      .update({ role: newRole })
+      .delete()
       .eq('user_id', userId);
 
-    if (error) {
+    if (deleteError) {
+      toast({
+        title: "Error",
+        description: "Failed to update user role.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Insert new role
+    const { error: insertError } = await supabase
+      .from('user_roles')
+      .insert({ user_id: userId, role: newRole });
+
+    if (insertError) {
       toast({
         title: "Error",
         description: "Failed to update user role.",
@@ -104,9 +119,22 @@ export function UsersTable({ profiles, userRoles, onRolesUpdate }: UsersTablePro
   };
 
   const bulkUpdateRoles = async (newRole: 'admin' | 'user') => {
-    const updates = Array.from(selectedUsers).map(userId =>
-      supabase.from('user_roles').update({ role: newRole }).eq('user_id', userId)
-    );
+    const updates = Array.from(selectedUsers).map(async (userId) => {
+      // Delete existing role(s)
+      const { error: deleteError } = await supabase
+        .from('user_roles')
+        .delete()
+        .eq('user_id', userId);
+
+      if (deleteError) return { error: deleteError };
+
+      // Insert new role
+      const { error: insertError } = await supabase
+        .from('user_roles')
+        .insert({ user_id: userId, role: newRole });
+
+      return { error: insertError };
+    });
 
     const results = await Promise.all(updates);
     const hasError = results.some(r => r.error);
