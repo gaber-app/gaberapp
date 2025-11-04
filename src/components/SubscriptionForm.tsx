@@ -17,7 +17,6 @@ const formSchema = z.object({
     .trim()
     .min(1, { message: "Email is required" })
     .email({ message: "Please enter a valid email address" })
-    .regex(/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/, { message: "Email must have a valid domain extension (e.g., .com, .org)" })
     .max(255),
 });
 
@@ -67,7 +66,8 @@ export default function SubscriptionForm() {
         });
 
       if (error) {
-        throw new Error(error.message);
+        console.error('Subscription error:', error);
+        throw new Error(error.message || 'Failed to submit');
       }
       
       toast({
@@ -183,17 +183,6 @@ export default function SubscriptionForm() {
                     setEmail(e.target.value);
                     if (errors.email) {
                       setErrors(prev => ({ ...prev, email: undefined }));
-                    }
-                  }}
-                  onBlur={() => {
-                    if (email.trim()) {
-                      try {
-                        formSchema.shape.email.parse(email);
-                      } catch (error) {
-                        if (error instanceof z.ZodError) {
-                          setErrors(prev => ({ ...prev, email: error.errors[0].message }));
-                        }
-                      }
                     }
                   }}
                   placeholder="armen@example.com"
