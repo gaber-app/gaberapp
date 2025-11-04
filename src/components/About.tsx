@@ -2,8 +2,6 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Card, CardContent } from '@/components/ui/card';
-import { Users, Heart, Sparkles } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -58,43 +56,11 @@ export default function About() {
 
         <div 
           ref={manifestoRef}
-          className="max-w-2xl text-left mb-16"
+          className="max-w-2xl text-left"
         >
           <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl">
             The Gaber app aims to be a vibrant, inclusive community where every Armenian professional can connect, feel a sense of belonging, and have the opportunity to thrive. It connects people from all backgrounds—recent graduates, executives, creative entrepreneurs, etc.—regardless of their career path or location.
           </p>
-        </div>
-
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
-            <CardContent className="p-6">
-              <Users className="mb-4 h-8 w-8 text-primary" />
-              <h3 className="mb-2 text-xl font-semibold text-foreground">Purposeful Connections</h3>
-              <p className="text-sm text-muted-foreground">
-                Connect with professionals who share your background and ambitions.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
-            <CardContent className="p-6">
-              <Heart className="mb-4 h-8 w-8 text-primary" />
-              <h3 className="mb-2 text-xl font-semibold text-foreground">Inclusivity and Unity</h3>
-              <p className="text-sm text-muted-foreground">
-                A welcoming space for all Armenians, regardless of career stage or location.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
-            <CardContent className="p-6">
-              <Sparkles className="mb-4 h-8 w-8 text-primary" />
-              <h3 className="mb-2 text-xl font-semibold text-foreground">Empowerment</h3>
-              <p className="text-sm text-muted-foreground">
-                Tools and resources to help you grow personally and professionally.
-              </p>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>
