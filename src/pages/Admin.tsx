@@ -21,9 +21,15 @@ interface Profile {
   updated_at: string;
 }
 
+interface UserRole {
+  user_id: string;
+  role: string;
+}
+
 export default function Admin() {
   const [subscriptions, setSubscriptions] = useState<Subscription[]>([]);
   const [profiles, setProfiles] = useState<Profile[]>([]);
+  const [userRoles, setUserRoles] = useState<Record<string, string>>({});
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -59,7 +65,7 @@ export default function Admin() {
     }
 
     setIsAdmin(true);
-    await Promise.all([fetchSubscriptions(), fetchProfiles()]);
+    await Promise.all([fetchSubscriptions(), fetchProfiles(), fetchUserRoles()]);
   };
 
   const fetchSubscriptions = async () => {
@@ -95,6 +101,47 @@ export default function Admin() {
       setProfiles(data || []);
     }
     setLoading(false);
+  };
+
+  const fetchUserRoles = async () => {
+    const { data, error } = await supabase
+      .from('user_roles')
+      .select('user_id, role');
+
+    if (error) {
+      toast({
+        title: "Error",
+        description: "Failed to load user roles.",
+        variant: "destructive",
+      });
+    } else {
+      const rolesMap = (data || []).reduce((acc, role) => {
+        acc[role.user_id] = role.role;
+        return acc;
+      }, {} as Record<string, string>);
+      setUserRoles(rolesMap);
+    }
+  };
+
+  const promoteToAdmin = async (userId: string) => {
+    const { error } = await supabase
+      .from('user_roles')
+      .update({ role: 'admin' })
+      .eq('user_id', userId);
+
+    if (error) {
+      toast({
+        title: "Error",
+        description: "Failed to promote user to admin.",
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "Success",
+        description: "User promoted to admin.",
+      });
+      await fetchUserRoles();
+    }
   };
 
   const handleSignOut = async () => {
@@ -168,14 +215,16 @@ export default function Admin() {
                   <TableHeader>
                     <TableRow>
                       <TableHead>Email</TableHead>
+                      <TableHead>Role</TableHead>
                       <TableHead>Created</TableHead>
                       <TableHead>Last Updated</TableHead>
+                      <TableHead>Actions</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {profiles.length === 0 ? (
                       <TableRow>
-                        <TableCell colSpan={3} className="text-center text-muted-foreground">
+                        <TableCell colSpan={5} className="text-center text-muted-foreground">
                           No user profiles yet
                         </TableCell>
                       </TableRow>
@@ -183,8 +232,22 @@ export default function Admin() {
                       profiles.map((profile) => (
                         <TableRow key={profile.id}>
                           <TableCell>{profile.email}</TableCell>
+                          <TableCell>
+                            <span className="capitalize">{userRoles[profile.id] || 'user'}</span>
+                          </TableCell>
                           <TableCell>{new Date(profile.created_at).toLocaleDateString()}</TableCell>
                           <TableCell>{new Date(profile.updated_at).toLocaleDateString()}</TableCell>
+                          <TableCell>
+                            {userRoles[profile.id] !== 'admin' && (
+                              <Button
+                                size="sm"
+                                variant="outline"
+                                onClick={() => promoteToAdmin(profile.id)}
+                              >
+                                Promote to Admin
+                              </Button>
+                            )}
+                          </TableCell>
                         </TableRow>
                       ))
                     )}
