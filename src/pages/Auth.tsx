@@ -89,9 +89,6 @@ export default function Auth() {
       <div className="w-full max-w-md space-y-8 rounded-lg border bg-card p-8 shadow-lg">
         <div className="text-center">
           <h1 className="text-3xl font-bold">Admin Sign In</h1>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Sign in to manage your application
-          </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
