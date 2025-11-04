@@ -14,6 +14,17 @@ serve(async (req) => {
   }
 
   try {
+    // Verify authentication
+    const authHeader = req.headers.get('Authorization');
+    if (!authHeader) {
+      console.error('No authorization header provided');
+      return new Response(
+        JSON.stringify({ error: 'Unauthorized' }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const token = authHeader.replace('Bearer ', '');
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseServiceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
@@ -24,6 +35,37 @@ serve(async (req) => {
       }
     });
 
+    // Verify the user's token and get their ID
+    const { data: { user }, error: authError } = await supabaseAdmin.auth.getUser(token);
+
+    if (authError || !user) {
+      console.error('Invalid token or user not found:', authError);
+      return new Response(
+        JSON.stringify({ error: 'Unauthorized' }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    console.log('Authenticated user:', user.id);
+
+    // Verify caller has admin role
+    const { data: roleData } = await supabaseAdmin
+      .from('user_roles')
+      .select('role')
+      .eq('user_id', user.id)
+      .eq('role', 'admin')
+      .maybeSingle();
+
+    if (!roleData) {
+      console.error('User does not have admin privileges:', user.id);
+      return new Response(
+        JSON.stringify({ error: 'Forbidden: Admin privileges required' }),
+        { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    console.log('Admin privileges verified for user:', user.id);
+
     const { email, password, role } = await req.json();
 
     console.log('Creating user with email:', email, 'and role:', role);
@@ -33,6 +75,15 @@ serve(async (req) => {
       console.error('Missing required fields');
       return new Response(
         JSON.stringify({ error: 'Email, password, and role are required' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // Validate role
+    if (!['user', 'admin'].includes(role)) {
+      console.error('Invalid role specified:', role);
+      return new Response(
+        JSON.stringify({ error: 'Invalid role specified' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
