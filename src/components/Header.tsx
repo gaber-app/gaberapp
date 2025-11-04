@@ -125,6 +125,12 @@ export default function Header() {
           >
             Join
           </button>
+          <Link
+            to="/auth"
+            className="text-base font-medium tracking-tight text-muted-foreground transition-colors duration-300 hover:text-primary"
+          >
+            Admin
+          </Link>
         </div>
       </nav>
     </header>
