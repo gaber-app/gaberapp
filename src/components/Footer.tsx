@@ -8,10 +8,10 @@ const Footer = () => {
           <div className="flex flex-col items-start">
             <h3 className="font-semibold mb-4">Connect With Us</h3>
             <div className="flex gap-4">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Instagram">
+              <a href="https://www.instagram.com/gaber.app/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Instagram">
                 <Instagram className="w-6 h-6" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/gaber/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="LinkedIn">
                 <Linkedin className="w-6 h-6" />
               </a>
             </div>
