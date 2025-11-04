@@ -144,7 +144,7 @@ export default function SubscriptionForm() {
                         setErrors(prev => ({ ...prev, firstName: undefined }));
                       }
                     }}
-                    placeholder="Armen"
+                    placeholder="Sosi"
                     className={`h-12 bg-white text-base border-2 transition-all duration-300 focus:border-primary ${
                       errors.firstName ? 'border-destructive focus:border-destructive' : 'border-gray-200'
                     }`}
@@ -168,7 +168,7 @@ export default function SubscriptionForm() {
                         setErrors(prev => ({ ...prev, lastName: undefined }));
                       }
                     }}
-                    placeholder="Petrosyan"
+                    placeholder="Vartanian"
                     className={`h-12 bg-white text-base border-2 transition-all duration-300 focus:border-primary ${
                       errors.lastName ? 'border-destructive focus:border-destructive' : 'border-gray-200'
                     }`}
@@ -193,7 +193,7 @@ export default function SubscriptionForm() {
                       setErrors(prev => ({ ...prev, email: undefined }));
                     }
                   }}
-                  placeholder="armen@example.com"
+                  placeholder="sosi@example.com"
                   className={`h-12 bg-white text-base border-2 transition-all duration-300 focus:border-primary ${
                     errors.email ? 'border-destructive focus:border-destructive' : 'border-gray-200'
                   }`}
