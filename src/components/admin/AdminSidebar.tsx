@@ -1,4 +1,5 @@
 import { Users, UserPlus } from "lucide-react";
+import { NavLink, useLocation } from "react-router-dom";
 import {
   Sidebar,
   SidebarContent,
@@ -12,12 +13,13 @@ import {
 } from "@/components/ui/sidebar";
 
 const menuItems = [
-  { title: "Subscriptions", url: "#subscriptions", icon: UserPlus },
-  { title: "Users", url: "#users", icon: Users },
+  { title: "Subscriptions", url: "/admin/subscriptions", icon: UserPlus },
+  { title: "Users", url: "/admin/users", icon: Users },
 ];
 
 export function AdminSidebar() {
   const { state } = useSidebar();
+  const location = useLocation();
   const isCollapsed = state === "collapsed";
 
   return (
@@ -27,16 +29,19 @@ export function AdminSidebar() {
           <SidebarGroupLabel>Admin</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {menuItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url} className="flex items-center gap-2">
-                      <item.icon className="h-4 w-4" />
-                      {!isCollapsed && <span>{item.title}</span>}
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+              {menuItems.map((item) => {
+                const isActive = location.pathname === item.url;
+                return (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton asChild isActive={isActive}>
+                      <NavLink to={item.url} className="flex items-center gap-2">
+                        <item.icon className="h-4 w-4" />
+                        {!isCollapsed && <span>{item.title}</span>}
+                      </NavLink>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
