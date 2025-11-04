@@ -66,7 +66,12 @@ export default function SubscriptionForm() {
         });
 
       if (error) {
-        console.error('Subscription error:', error);
+        console.error('Subscription error details:', {
+          message: error.message,
+          details: error.details,
+          hint: error.hint,
+          code: error.code
+        });
         throw new Error(error.message || 'Failed to submit');
       }
       
@@ -80,6 +85,7 @@ export default function SubscriptionForm() {
       setLastName('');
       setEmail('');
     } catch (error) {
+      console.error('Form submission error:', error);
       if (error instanceof z.ZodError) {
         const fieldErrors: { firstName?: string; lastName?: string; email?: string } = {};
         error.errors.forEach((err) => {
@@ -89,9 +95,11 @@ export default function SubscriptionForm() {
         });
         setErrors(fieldErrors);
       } else {
+        const errorMessage = error instanceof Error ? error.message : 'Failed to join the waitlist. Please try again.';
+        console.error('Detailed error:', errorMessage);
         toast({
           title: "Error",
-          description: "Failed to join the waitlist. Please try again.",
+          description: errorMessage,
           variant: "destructive",
         });
       }

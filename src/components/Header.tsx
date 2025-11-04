@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -24,64 +24,6 @@ export default function Header() {
     },
     { scope: headerRef }
   );
-
-  useEffect(() => {
-    let lastScrollY = window.scrollY;
-    let ticking = false;
-    
-    const showHeader = () => {
-      if (headerRef.current) {
-        gsap.to(headerRef.current, {
-          y: 0,
-          autoAlpha: 1,
-          duration: 0.3,
-          ease: 'power3.out'
-        });
-      }
-    };
-
-    const hideHeader = () => {
-      if (headerRef.current) {
-        gsap.to(headerRef.current, {
-          y: -120,
-          autoAlpha: 0,
-          duration: 0.3,
-          ease: 'power3.in'
-        });
-      }
-    };
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const scrollDiff = Math.abs(currentScrollY - lastScrollY);
-      
-      if (scrollDiff < 50) return;
-      
-      if (currentScrollY < 100) {
-        showHeader();
-      } else if (currentScrollY > lastScrollY) {
-        hideHeader();
-      } else {
-        showHeader();
-      }
-      
-      lastScrollY = currentScrollY;
-      ticking = false;
-    };
-
-    const requestTick = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(handleScroll);
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', requestTick, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', requestTick);
-    };
-  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
