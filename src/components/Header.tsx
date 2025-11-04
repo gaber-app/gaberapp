@@ -65,40 +65,6 @@ export default function Header() {
         />
 
         <div className="flex items-center gap-4 md:gap-8">
-          {/* Mobile Menu */}
-          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-            <SheetTrigger asChild>
-              <button className="md:hidden p-2 text-primary hover:text-primary/80 transition-colors">
-                <Menu className="h-6 w-6" />
-              </button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-xl border-border/50">
-              <SheetHeader>
-                <SheetTitle className="text-left text-primary">Menu</SheetTitle>
-              </SheetHeader>
-              <nav className="flex flex-col gap-4 mt-8">
-                <button
-                  onClick={() => scrollToSection('what-is-gaber')}
-                  className="text-left text-lg font-medium tracking-tight text-foreground transition-colors duration-300 hover:text-primary py-3 px-2 rounded-lg hover:bg-primary/10"
-                >
-                  What is Gaber
-                </button>
-                <button
-                  onClick={() => scrollToSection('our-vision')}
-                  className="text-left text-lg font-medium tracking-tight text-foreground transition-colors duration-300 hover:text-primary py-3 px-2 rounded-lg hover:bg-primary/10"
-                >
-                  Our Vision
-                </button>
-                <button
-                  onClick={() => scrollToSection('subscription-form')}
-                  className="text-left text-lg font-medium tracking-tight text-foreground transition-colors duration-300 hover:text-primary py-3 px-2 rounded-lg hover:bg-primary/10"
-                >
-                  Join Waitlist
-                </button>
-              </nav>
-            </SheetContent>
-          </Sheet>
-
           {/* Desktop Navigation */}
           <button
             onClick={() => scrollToSection('what-is-gaber')}
@@ -118,6 +84,46 @@ export default function Header() {
           >
             Join
           </button>
+
+          {/* Mobile Menu */}
+          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+            <SheetTrigger asChild>
+              <button className="md:hidden p-2 text-primary hover:text-primary/80 transition-colors">
+                <Menu className="h-6 w-6" />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-xl border-border/50">
+              <SheetHeader className="flex flex-row items-center justify-between">
+                <SheetTitle className="text-left text-primary text-xl">Menu</SheetTitle>
+                <button 
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-primary hover:text-primary/80 transition-colors"
+                >
+                  <X className="h-7 w-7" />
+                </button>
+              </SheetHeader>
+              <nav className="flex flex-col gap-3 mt-8">
+                <button
+                  onClick={() => scrollToSection('what-is-gaber')}
+                  className="text-left text-lg font-medium tracking-tight text-foreground transition-colors duration-300 hover:text-primary py-3 px-4 rounded-lg hover:bg-primary/10"
+                >
+                  What is Gaber
+                </button>
+                <button
+                  onClick={() => scrollToSection('our-vision')}
+                  className="text-left text-lg font-medium tracking-tight text-foreground transition-colors duration-300 hover:text-primary py-3 px-4 rounded-lg hover:bg-primary/10"
+                >
+                  Our Vision
+                </button>
+                <button
+                  onClick={() => scrollToSection('subscription-form')}
+                  className="text-left text-lg font-medium tracking-tight text-primary-foreground transition-colors duration-300 py-3 px-4 rounded-lg bg-primary hover:bg-primary/90"
+                >
+                  Join Waitlist
+                </button>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </nav>
     </header>
