@@ -2,6 +2,7 @@ import ParallaxBackground from '@/components/ParallaxBackground';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import WhatIsGaber from '@/components/WhatIsGaber';
 import SubscriptionForm from '@/components/SubscriptionForm';
 import Footer from '@/components/Footer';
 
@@ -12,6 +13,7 @@ const Index = () => {
       <Header />
       <Hero />
       <About />
+      <WhatIsGaber />
       <SubscriptionForm />
       <Footer />
     </main>
