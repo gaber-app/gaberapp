@@ -59,7 +59,7 @@ export default function WhatIsGaber() {
           <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
             <CardContent className="p-6">
               <Heart className="mb-4 h-8 w-8 text-primary" />
-              <h3 className="mb-2 text-xl font-semibold text-foreground">Inclusivity and Unity</h3>
+              <h3 className="mb-2 text-xl font-semibold text-foreground">Inclusivity & Unity</h3>
               <p className="text-sm text-muted-foreground">A welcoming and safe space for all Armenians, regardless of career stage.</p>
             </CardContent>
           </Card>
