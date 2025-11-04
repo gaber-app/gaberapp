@@ -68,9 +68,7 @@ export default function WhatIsGaber() {
             <CardContent className="p-6">
               <Sparkles className="mb-4 h-8 w-8 text-primary" />
               <h3 className="mb-2 text-xl font-semibold text-foreground">Empowerment</h3>
-              <p className="text-sm text-muted-foreground">
-                Tools and resources to help you grow personally and professionally.
-              </p>
+              <p className="text-sm text-muted-foreground">Network and connections to help you grow personally and professionally.</p>
             </CardContent>
           </Card>
         </div>
