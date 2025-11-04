@@ -44,7 +44,7 @@ export default function About() {
     <section 
       id="our-vision"
       ref={sectionRef} 
-      className="relative py-32 px-6 md:px-10 lg:px-16"
+      className="relative pt-16 pb-32 px-6 md:px-10 lg:px-16"
     >
       <div className="max-w-6xl">
         <h2 
