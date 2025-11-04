@@ -75,7 +75,7 @@ export default function Hero() {
             {/* Text Content */}
             <div className="flex-1 text-left space-y-8">
             <h1 ref={headerRef} className="text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-              Armenian roots. Modern connections.
+              Armenian roots. <br /><span className="whitespace-nowrap">Modern connections.</span>
             </h1>
 
             <div className="max-w-2xl">
