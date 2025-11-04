@@ -70,7 +70,7 @@ export default function Header() {
             onClick={() => scrollToSection('what-is-gaber')}
             className="hidden md:block text-base font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
           >
-            What is Gaber
+            What is Gaber?
           </button>
           <button
             onClick={() => scrollToSection('our-vision')}
@@ -106,7 +106,7 @@ export default function Header() {
                   onClick={() => scrollToSection('what-is-gaber')}
                   className="text-left text-lg font-medium tracking-tight text-foreground transition-colors duration-300 hover:text-primary py-3 px-4 rounded-lg hover:bg-primary/10"
                 >
-                  What is Gaber
+                  What is Gaber?
                 </button>
                 <button
                   onClick={() => scrollToSection('our-vision')}
