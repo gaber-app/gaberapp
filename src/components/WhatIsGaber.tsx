@@ -59,7 +59,7 @@ export default function WhatIsGaber() {
           className="max-w-2xl text-left space-y-6"
         >
           <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl">
-            The Gaber app aims to be a vibrant, inclusive community where every Armenian professional can connect, feel a sense of belonging, and have the opportunity to thrive. It connects people from all backgrounds—recent graduates, executives, creative entrepreneurs, etc.—regardless of their career path or location.
+            Gaber (Կապէր) is the premier professional networking app designed exclusively for the US-based Armenian diaspora. Our mission is to strengthen the Armenian community in the United States by providing a dedicated digital space for professional connection.
           </p>
           
           <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl">
