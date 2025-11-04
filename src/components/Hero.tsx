@@ -74,7 +74,7 @@ export default function Hero() {
           {/* Text Content */}
           <div className="flex-1 max-w-2xl text-left space-y-8">
             <h1 ref={headerRef} className="text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-              Connect. Collaborate. Thrive.
+              Armenian roots. Modern connections.
             </h1>
 
             <p ref={paraRef} className="text-lg font-medium leading-relaxed tracking-tight text-foreground sm:text-lg md:text-xl py-6">
