@@ -1,19 +1,33 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, Outlet } from 'react-router-dom';
+import { useNavigate, Outlet, useLocation } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
-import { Button } from '@/components/ui/button';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { useToast } from '@/hooks/use-toast';
 import { AdminSidebar } from '@/components/admin/AdminSidebar';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { User } from 'lucide-react';
 
 export default function Admin() {
   const [loading, setLoading] = useState(true);
+  const [userEmail, setUserEmail] = useState<string>('');
   const navigate = useNavigate();
+  const location = useLocation();
   const { toast } = useToast();
 
   useEffect(() => {
     checkAdmin();
   }, []);
+
+  useEffect(() => {
+    if (location.pathname === '/admin') {
+      navigate('/admin/subscriptions', { replace: true });
+    }
+  }, [location.pathname, navigate]);
 
   const checkAdmin = async () => {
     const { data: { session } } = await supabase.auth.getSession();
@@ -22,6 +36,8 @@ export default function Admin() {
       navigate('/auth');
       return;
     }
+
+    setUserEmail(session.user.email || '');
 
     const { data: roleData } = await supabase
       .from('user_roles')
@@ -62,9 +78,17 @@ export default function Admin() {
             <div className="flex h-14 items-center gap-4 px-4 md:px-6">
               <SidebarTrigger />
               <div className="flex-1" />
-              <Button onClick={handleSignOut} variant="outline" size="sm">
-                Sign Out
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                  <User className="h-4 w-4" />
+                  <span>{userEmail}</span>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem onClick={handleSignOut}>
+                    Sign Out
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </header>
 

@@ -5,12 +5,12 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import gaberLogoWhite from '@/assets/gaber-logo-white.svg';
 
 const menuItems = [
   { title: "Subscriptions", url: "/admin/subscriptions", icon: UserPlus },
@@ -26,8 +26,15 @@ export function AdminSidebar() {
   return (
     <Sidebar>
       <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Admin</SidebarGroupLabel>
+        <div className="px-4 py-6">
+          <img 
+            src={gaberLogoWhite} 
+            alt="Gaber" 
+            className={`h-8 w-auto transition-all ${isCollapsed ? 'h-6' : 'h-8'}`}
+          />
+        </div>
+        
+        <SidebarGroup className="mt-4">
           <SidebarGroupContent>
             <SidebarMenu>
               {menuItems.map((item) => {
