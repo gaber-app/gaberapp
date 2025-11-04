@@ -78,7 +78,9 @@ export default function Hero() {
               Armenian roots. Modern connections.
             </h1>
 
-            <p ref={paraRef} className="text-lg font-medium leading-relaxed tracking-tight text-foreground sm:text-lg md:text-xl py-6">The premier professional networking platform uniting the Armenian diaspora. Building bridges, creating opportunities, strengthening our community.</p>
+            <div className="max-w-2xl">
+              <p ref={paraRef} className="text-lg font-medium leading-relaxed tracking-tight text-foreground sm:text-lg md:text-xl py-6">The premier professional networking platform uniting the Armenian diaspora. Building bridges, creating opportunities, strengthening our community.</p>
+            </div>
 
             <div ref={ctaRef}>
               <Button onClick={scrollToForm} size="lg" className="group relative overflow-hidden bg-primary px-8 py-6 text-base font-semibold text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--primary-glow)_/_0.6)]">
