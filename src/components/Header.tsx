@@ -92,7 +92,7 @@ export default function Header() {
                 <Menu className="h-6 w-6" />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-xl border-border/50">
+            <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-xl border-border/50 p-4 [&>button]:hidden">
               <SheetHeader className="flex flex-row items-end justify-end">
                 <button 
                   onClick={() => setIsMenuOpen(false)}
