@@ -12,8 +12,8 @@ const Index = () => {
       <ParallaxBackground />
       <Header />
       <Hero />
-      <About />
       <WhatIsGaber />
+      <About />
       <SubscriptionForm />
       <Footer />
     </main>
