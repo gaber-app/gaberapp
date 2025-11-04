@@ -44,10 +44,6 @@ export default function WhatIsGaber() {
         <div ref={contentRef} className="max-w-2xl text-left space-y-6">
           <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl">Gaber (Կապէր) is the premier professional networking app designed exclusively for the 🇺🇸 based Armenian diaspora. Our mission is to strengthen the Armenian community in the United States by providing a dedicated digital space for professional connection.</p>
           
-          <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl mb-8">
-            The Gaber mobile application goes beyond simple networking to facilitate:
-          </p>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
             <Card className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg">
               <CardContent className="pt-6">
