@@ -93,8 +93,7 @@ export default function Header() {
               </button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-xl border-border/50">
-              <SheetHeader className="flex flex-row items-center justify-between">
-                <SheetTitle className="text-left text-primary text-xl">Menu</SheetTitle>
+              <SheetHeader className="flex flex-row items-end justify-end">
                 <button 
                   onClick={() => setIsMenuOpen(false)}
                   className="text-primary hover:text-primary/80 transition-colors"
