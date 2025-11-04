@@ -56,8 +56,14 @@ export default function Header() {
 
         <div className="flex items-center gap-4 md:gap-8">
           <button
+            onClick={() => scrollToSection('what-is-gaber')}
+            className="hidden md:block text-base font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
+          >
+            What is Gaber
+          </button>
+          <button
             onClick={() => scrollToSection('our-vision')}
-            className="text-base font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
+            className="hidden md:block text-base font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
           >
             Our Vision
           </button>
