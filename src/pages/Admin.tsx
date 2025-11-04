@@ -4,7 +4,10 @@ import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { useToast } from '@/hooks/use-toast';
+import { AdminSidebar } from '@/components/admin/AdminSidebar';
+import { UsersTable } from '@/components/admin/UsersTable';
 
 interface Subscription {
   id: string;
@@ -123,26 +126,6 @@ export default function Admin() {
     }
   };
 
-  const promoteToAdmin = async (userId: string) => {
-    const { error } = await supabase
-      .from('user_roles')
-      .update({ role: 'admin' })
-      .eq('user_id', userId);
-
-    if (error) {
-      toast({
-        title: "Error",
-        description: "Failed to promote user to admin.",
-        variant: "destructive",
-      });
-    } else {
-      toast({
-        title: "Success",
-        description: "User promoted to admin.",
-      });
-      await fetchUserRoles();
-    }
-  };
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
@@ -154,110 +137,86 @@ export default function Admin() {
   }
 
   return (
-    <div className="min-h-screen bg-background p-4 md:p-8">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-8 flex items-center justify-between">
-          <h1 className="text-3xl md:text-4xl font-bold">Admin Panel</h1>
-          <Button onClick={handleSignOut} variant="outline">Sign Out</Button>
+    <SidebarProvider>
+      <div className="flex min-h-screen w-full bg-background">
+        <AdminSidebar />
+        
+        <div className="flex-1">
+          <header className="sticky top-0 z-10 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <div className="flex h-14 items-center gap-4 px-4 md:px-6">
+              <SidebarTrigger />
+              <div className="flex-1" />
+              <Button onClick={handleSignOut} variant="outline" size="sm">
+                Sign Out
+              </Button>
+            </div>
+          </header>
+
+          <main className="p-4 md:p-8">
+            <div className="mx-auto max-w-7xl">
+              <h1 className="mb-8 text-3xl md:text-4xl font-bold">Admin Panel</h1>
+
+              <Tabs defaultValue="subscriptions" className="w-full">
+                <TabsList className="grid w-full max-w-md grid-cols-2">
+                  <TabsTrigger value="subscriptions">Subscriptions</TabsTrigger>
+                  <TabsTrigger value="users">Users</TabsTrigger>
+                </TabsList>
+
+                <TabsContent value="subscriptions" className="mt-6" id="subscriptions">
+                  <div className="rounded-lg border bg-card p-4 md:p-6">
+                    <h2 className="mb-4 text-xl md:text-2xl font-semibold">
+                      Waitlist Subscriptions ({subscriptions.length})
+                    </h2>
+                    <div className="overflow-x-auto">
+                      <Table>
+                        <TableHeader>
+                          <TableRow>
+                            <TableHead>First Name</TableHead>
+                            <TableHead>Last Name</TableHead>
+                            <TableHead>Email</TableHead>
+                            <TableHead>Joined</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          {subscriptions.length === 0 ? (
+                            <TableRow>
+                              <TableCell colSpan={4} className="text-center text-muted-foreground">
+                                No subscriptions yet
+                              </TableCell>
+                            </TableRow>
+                          ) : (
+                            subscriptions.map((sub) => (
+                              <TableRow key={sub.id}>
+                                <TableCell>{sub.first_name}</TableCell>
+                                <TableCell>{sub.last_name}</TableCell>
+                                <TableCell>{sub.email}</TableCell>
+                                <TableCell>{new Date(sub.created_at).toLocaleDateString()}</TableCell>
+                              </TableRow>
+                            ))
+                          )}
+                        </TableBody>
+                      </Table>
+                    </div>
+                  </div>
+                </TabsContent>
+
+                <TabsContent value="users" className="mt-6" id="users">
+                  <div className="rounded-lg border bg-card p-4 md:p-6">
+                    <h2 className="mb-4 text-xl md:text-2xl font-semibold">
+                      User Profiles ({profiles.length})
+                    </h2>
+                    <UsersTable
+                      profiles={profiles}
+                      userRoles={userRoles}
+                      onRolesUpdate={fetchUserRoles}
+                    />
+                  </div>
+                </TabsContent>
+              </Tabs>
+            </div>
+          </main>
         </div>
-
-        <Tabs defaultValue="subscriptions" className="w-full">
-          <TabsList className="grid w-full max-w-md grid-cols-2">
-            <TabsTrigger value="subscriptions">Subscriptions</TabsTrigger>
-            <TabsTrigger value="users">Users</TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="subscriptions" className="mt-6">
-            <div className="rounded-lg border bg-card p-4 md:p-6">
-              <h2 className="mb-4 text-xl md:text-2xl font-semibold">
-                Waitlist Subscriptions ({subscriptions.length})
-              </h2>
-              <div className="overflow-x-auto">
-                <Table>
-                  <TableHeader>
-                    <TableRow>
-                      <TableHead>First Name</TableHead>
-                      <TableHead>Last Name</TableHead>
-                      <TableHead>Email</TableHead>
-                      <TableHead>Joined</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {subscriptions.length === 0 ? (
-                      <TableRow>
-                        <TableCell colSpan={4} className="text-center text-muted-foreground">
-                          No subscriptions yet
-                        </TableCell>
-                      </TableRow>
-                    ) : (
-                      subscriptions.map((sub) => (
-                        <TableRow key={sub.id}>
-                          <TableCell>{sub.first_name}</TableCell>
-                          <TableCell>{sub.last_name}</TableCell>
-                          <TableCell>{sub.email}</TableCell>
-                          <TableCell>{new Date(sub.created_at).toLocaleDateString()}</TableCell>
-                        </TableRow>
-                      ))
-                    )}
-                  </TableBody>
-                </Table>
-              </div>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="users" className="mt-6">
-            <div className="rounded-lg border bg-card p-4 md:p-6">
-              <h2 className="mb-4 text-xl md:text-2xl font-semibold">
-                User Profiles ({profiles.length})
-              </h2>
-              <div className="overflow-x-auto">
-                <Table>
-                  <TableHeader>
-                    <TableRow>
-                      <TableHead>Email</TableHead>
-                      <TableHead>Role</TableHead>
-                      <TableHead>Created</TableHead>
-                      <TableHead>Last Updated</TableHead>
-                      <TableHead>Actions</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {profiles.length === 0 ? (
-                      <TableRow>
-                        <TableCell colSpan={5} className="text-center text-muted-foreground">
-                          No user profiles yet
-                        </TableCell>
-                      </TableRow>
-                    ) : (
-                      profiles.map((profile) => (
-                        <TableRow key={profile.id}>
-                          <TableCell>{profile.email}</TableCell>
-                          <TableCell>
-                            <span className="capitalize">{userRoles[profile.id] || 'user'}</span>
-                          </TableCell>
-                          <TableCell>{new Date(profile.created_at).toLocaleDateString()}</TableCell>
-                          <TableCell>{new Date(profile.updated_at).toLocaleDateString()}</TableCell>
-                          <TableCell>
-                            {userRoles[profile.id] !== 'admin' && (
-                              <Button
-                                size="sm"
-                                variant="outline"
-                                onClick={() => promoteToAdmin(profile.id)}
-                              >
-                                Promote to Admin
-                              </Button>
-                            )}
-                          </TableCell>
-                        </TableRow>
-                      ))
-                    )}
-                  </TableBody>
-                </Table>
-              </div>
-            </div>
-          </TabsContent>
-        </Tabs>
       </div>
-    </div>
+    </SidebarProvider>
   );
 }
