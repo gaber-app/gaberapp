@@ -1,14 +1,23 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 import gaberLogo from '@/assets/gaber-logo-color.svg';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Header() {
   const headerRef = useRef<HTMLElement | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useGSAP(
     () => {
@@ -28,6 +37,7 @@ export default function Header() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
+    setIsMenuOpen(false);
   };
 
   return (
@@ -55,6 +65,41 @@ export default function Header() {
         />
 
         <div className="flex items-center gap-4 md:gap-8">
+          {/* Mobile Menu */}
+          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+            <SheetTrigger asChild>
+              <button className="md:hidden p-2 text-primary hover:text-primary/80 transition-colors">
+                <Menu className="h-6 w-6" />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-xl border-border/50">
+              <SheetHeader>
+                <SheetTitle className="text-left text-primary">Menu</SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col gap-4 mt-8">
+                <button
+                  onClick={() => scrollToSection('what-is-gaber')}
+                  className="text-left text-lg font-medium tracking-tight text-foreground transition-colors duration-300 hover:text-primary py-3 px-2 rounded-lg hover:bg-primary/10"
+                >
+                  What is Gaber
+                </button>
+                <button
+                  onClick={() => scrollToSection('our-vision')}
+                  className="text-left text-lg font-medium tracking-tight text-foreground transition-colors duration-300 hover:text-primary py-3 px-2 rounded-lg hover:bg-primary/10"
+                >
+                  Our Vision
+                </button>
+                <button
+                  onClick={() => scrollToSection('subscription-form')}
+                  className="text-left text-lg font-medium tracking-tight text-foreground transition-colors duration-300 hover:text-primary py-3 px-2 rounded-lg hover:bg-primary/10"
+                >
+                  Join Waitlist
+                </button>
+              </nav>
+            </SheetContent>
+          </Sheet>
+
+          {/* Desktop Navigation */}
           <button
             onClick={() => scrollToSection('what-is-gaber')}
             className="hidden md:block text-base font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
