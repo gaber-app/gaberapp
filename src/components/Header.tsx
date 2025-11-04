@@ -104,7 +104,7 @@ export default function Header() {
       <div 
         className="absolute inset-0 -z-10 bg-white/25"
       />
-      <nav className="max-w-6xl w-full mx-auto flex items-center justify-between">
+      <nav className="flex items-center justify-between">
         <img 
           src={gaberLogo} 
           alt="Gaber" 
