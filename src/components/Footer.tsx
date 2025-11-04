@@ -2,7 +2,6 @@ import { Instagram, Linkedin, Mail } from 'lucide-react';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="relative bg-primary text-primary-foreground py-12 px-4 md:px-6 lg:px-16">
-      <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Social Links */}
           <div className="flex flex-col items-start">
@@ -46,7 +45,6 @@ const Footer = () => {
             © {currentYear} All rights reserved.
           </p>
         </div>
-      </div>
     </footer>;
 };
 export default Footer;
