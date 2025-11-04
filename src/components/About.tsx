@@ -59,7 +59,7 @@ export default function About() {
           className="max-w-2xl text-left"
         >
           <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl">
-            In Armenian, "Gaber" means "ties" or "connections". It's a name that embodies our core mission: to build the largest US-based (for now) professional network for Armenians. This isn't just another platform; it's a movement to create a vibrant, inclusive community where every Armenian professional feels a sense of belonging and has the opportunity to thrive.
+            The Gaber app aims to be a vibrant, inclusive community where every Armenian professional can connect, feel a sense of belonging, and have the opportunity to thrive. It connects people from all backgrounds—recent graduates, executives, creative entrepreneurs, etc.—regardless of their career path or location.
           </p>
         </div>
       </div>
