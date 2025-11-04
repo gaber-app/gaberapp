@@ -58,14 +58,8 @@ export default function About() {
           ref={manifestoRef}
           className="max-w-2xl text-left"
         >
-          <p className="mb-6 text-lg font-medium leading-relaxed text-foreground sm:text-xl">
-            We're building more than a network—we're creating a movement. A space where Armenian 
-            professionals worldwide can connect authentically, share knowledge freely, and collaborate 
-            meaningfully.
-          </p>
           <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl">
-            From entrepreneurs to executives, artists to engineers, Gaber brings together the brightest 
-            minds in our diaspora, fostering innovation and opportunity across borders.
+            In Armenian, "Gaber" means "ties" or "connections". It's a name that embodies our core mission: to build the largest US-based (for now) professional network for Armenians. This isn't just another platform; it's a movement to create a vibrant, inclusive community where every Armenian professional feels a sense of belonging and has the opportunity to thrive.
           </p>
         </div>
       </div>
