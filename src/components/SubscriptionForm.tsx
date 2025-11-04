@@ -112,7 +112,7 @@ export default function SubscriptionForm() {
     <section 
       id="subscription-form"
       ref={sectionRef} 
-      className="relative pt-16 pb-48 px-4 md:px-6 lg:px-16"
+      className="relative pt-24 pb-32 px-4 md:px-6 lg:px-16"
     >
       <div className="mx-auto max-w-2xl">
         <div 
