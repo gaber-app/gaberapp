@@ -69,7 +69,7 @@ export default function Hero() {
     });
   };
   return <section ref={sectionRef} className="relative min-h-screen w-full overflow-hidden flex items-center justify-center pt-20">
-      <div className="relative w-full px-6 py-32 md:px-10 lg:px-16 md:py-40">
+      <div className="relative w-full px-4 py-32 md:px-6 lg:px-16 md:py-40">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
           {/* Text Content */}
           <div className="flex-1 max-w-2xl text-left space-y-8">

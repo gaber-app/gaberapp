@@ -33,7 +33,7 @@ export default function About() {
   }, {
     scope: sectionRef
   });
-  return <section id="our-vision" ref={sectionRef} className="relative pt-16 pb-32 px-6 md:px-10 lg:px-16">
+  return <section id="our-vision" ref={sectionRef} className="relative pt-16 pb-32 px-4 md:px-6 lg:px-16">
       <div className="max-w-6xl w-full mx-auto">
         <h2 ref={headingRef} className="mb-12 text-left text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
           Our Vision
