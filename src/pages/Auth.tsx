@@ -141,12 +141,6 @@ export default function Auth() {
             {isLoading ? 'Loading...' : 'Sign In'}
           </Button>
         </form>
-
-        <div className="text-center">
-          <p className="text-sm text-muted-foreground">
-            New users must be created by an admin
-          </p>
-        </div>
       </div>
     </div>
   );
