@@ -85,7 +85,7 @@ export default function Users() {
         </Button>
       </div>
 
-      <div className="rounded-lg border bg-card p-6">
+      <div className="rounded-lg border bg-card">
         <UsersTable
           profiles={profiles}
           userRoles={userRoles}
