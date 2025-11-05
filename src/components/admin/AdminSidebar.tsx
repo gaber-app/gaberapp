@@ -24,7 +24,7 @@ export function AdminSidebar() {
   const isCollapsed = state === "collapsed";
 
   return (
-    <Sidebar className="bg-primary border-primary">
+    <Sidebar className="bg-[hsl(220,96%,49%)] border-[hsl(220,96%,49%)]">
       <SidebarContent>
         <div className="px-4 py-6">
           <img 
@@ -41,7 +41,7 @@ export function AdminSidebar() {
                 const isActive = location.pathname === item.url;
                 return (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild isActive={isActive} className="text-primary-foreground hover:bg-primary-glow data-[active=true]:bg-primary-glow">
+                    <SidebarMenuButton asChild isActive={isActive} className="text-white hover:bg-[hsl(220,96%,60%)] data-[active=true]:bg-[hsl(220,96%,60%)]">
                       <NavLink to={item.url} className="flex items-center gap-2">
                         <item.icon className="h-4 w-4" />
                         {!isCollapsed && <span>{item.title}</span>}
