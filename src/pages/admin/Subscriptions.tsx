@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { Download } from 'lucide-react';
+import { SubscriptionsTable } from '@/components/admin/SubscriptionsTable';
 
 interface Subscription {
   id: string;
@@ -99,37 +99,8 @@ export default function Subscriptions() {
         </Button>
       </div>
 
-      <div className="rounded-lg border bg-card">
-        <div className="overflow-x-auto">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>First Name</TableHead>
-                <TableHead>Last Name</TableHead>
-                <TableHead>Email</TableHead>
-                <TableHead>Joined</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {subscriptions.length === 0 ? (
-                <TableRow>
-                  <TableCell colSpan={4} className="text-center text-muted-foreground h-32">
-                    No subscriptions yet
-                  </TableCell>
-                </TableRow>
-              ) : (
-                subscriptions.map((sub) => (
-                  <TableRow key={sub.id}>
-                    <TableCell>{sub.first_name}</TableCell>
-                    <TableCell>{sub.last_name}</TableCell>
-                    <TableCell>{sub.email}</TableCell>
-                    <TableCell>{new Date(sub.created_at).toLocaleDateString()}</TableCell>
-                  </TableRow>
-                ))
-              )}
-            </TableBody>
-          </Table>
-        </div>
+      <div className="rounded-lg border bg-card p-6">
+        <SubscriptionsTable subscriptions={subscriptions} />
       </div>
     </div>
   );

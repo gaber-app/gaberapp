@@ -211,13 +211,12 @@ export function UsersTable({ profiles, userRoles, onRolesUpdate }: UsersTablePro
               <TableHead>
                 <SortButton field="updated_at">Last Updated</SortButton>
               </TableHead>
-              <TableHead>Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {sortedProfiles.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={6} className="text-center text-muted-foreground">
+                <TableCell colSpan={5} className="text-center text-muted-foreground">
                   No user profiles yet
                 </TableCell>
               </TableRow>
@@ -236,7 +235,7 @@ export function UsersTable({ profiles, userRoles, onRolesUpdate }: UsersTablePro
                       value={userRoles[profile.id] || 'user'}
                       onValueChange={(value) => updateUserRole(profile.id, value as 'admin' | 'user')}
                     >
-                      <SelectTrigger className="w-32">
+                      <SelectTrigger className="w-32 border-border bg-transparent hover:bg-card">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -247,18 +246,6 @@ export function UsersTable({ profiles, userRoles, onRolesUpdate }: UsersTablePro
                   </TableCell>
                   <TableCell>{new Date(profile.created_at).toLocaleDateString()}</TableCell>
                   <TableCell>{new Date(profile.updated_at).toLocaleDateString()}</TableCell>
-                  <TableCell>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={() => updateUserRole(
-                        profile.id,
-                        userRoles[profile.id] === 'admin' ? 'user' : 'admin'
-                      )}
-                    >
-                      {userRoles[profile.id] === 'admin' ? 'Demote' : 'Promote'}
-                    </Button>
-                  </TableCell>
                 </TableRow>
               ))
             )}

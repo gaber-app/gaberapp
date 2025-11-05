@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -25,7 +24,6 @@ export default function Settings() {
   const [errors, setErrors] = useState<{ newPassword?: string; confirmPassword?: string }>({});
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
-  const navigate = useNavigate();
 
   const handlePasswordChange = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -74,19 +72,9 @@ export default function Settings() {
     }
   };
 
-  const handleSignOut = async () => {
-    await supabase.auth.signOut();
-    navigate('/auth');
-  };
-
   return (
     <div className="container mx-auto p-6 space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold">Settings</h1>
-        <Button variant="outline" onClick={handleSignOut}>
-          Sign Out
-        </Button>
-      </div>
+      <h1 className="text-3xl font-bold">Settings</h1>
 
       <Card>
         <CardHeader>
@@ -147,7 +135,7 @@ export default function Settings() {
               )}
             </div>
 
-            <Button type="submit" disabled={isLoading}>
+            <Button type="submit" disabled={isLoading} className="mt-2">
               {isLoading ? 'Updating...' : 'Update Password'}
             </Button>
           </form>
