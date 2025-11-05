@@ -66,14 +66,14 @@ All colors MUST be HSL.
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-spring: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 
-    --sidebar-background: 220 96% 49%;
+    --sidebar-background: 220 97% 40%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 220 96% 49%;
+    --sidebar-primary: 220 97% 40%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 96% 60%;
+    --sidebar-accent: 220 96% 49%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 220 96% 49%;
-    --sidebar-ring: 220 96% 49%;
+    --sidebar-border: 220 97% 40%;
+    --sidebar-ring: 220 97% 40%;
   }
 
   .dark {
