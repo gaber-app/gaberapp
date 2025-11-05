@@ -61,7 +61,7 @@ export function SubscriptionsTable({ subscriptions }: SubscriptionsTableProps) {
       <Button
         variant="ghost"
         size="sm"
-        className={`-ml-3 h-8 ${isActive ? 'text-primary font-medium' : ''}`}
+        className={`-ml-3 h-8 hover:bg-primary/10 hover:text-primary ${isActive ? 'text-primary font-medium bg-primary/5' : 'text-foreground'}`}
         onClick={() => handleSort(field)}
       >
         {children}
