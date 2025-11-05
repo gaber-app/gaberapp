@@ -36,13 +36,13 @@ export function AdminSidebar() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>(initialMenuItems);
 
   return (
-    <Sidebar className="bg-primary border-primary">
+    <Sidebar>
       <SidebarContent>
         <div className="px-4 py-6">
           <img 
             src={gaberLogoWhite} 
             alt="Gaber" 
-            className={`h-8 w-auto transition-all ${isCollapsed ? 'h-6' : 'h-8'}`}
+            className={`h-8 w-auto transition-all ${isCollapsed ? 'h-6' : 'h-8'} brightness-0`}
           />
         </div>
         
@@ -56,7 +56,7 @@ export function AdminSidebar() {
                     <SidebarMenuButton 
                       asChild 
                       isActive={isActive} 
-                      className="text-primary-foreground hover:bg-primary-glow data-[active=true]:bg-primary-glow"
+                      className="text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground data-[active=true]:bg-primary data-[active=true]:text-primary-foreground"
                       disabled={item.isDisabled}
                     >
                       <NavLink to={item.url} className="flex items-center gap-2 justify-between w-full">
