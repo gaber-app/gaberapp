@@ -99,7 +99,7 @@ export default function Subscriptions() {
         </Button>
       </div>
 
-      <div className="rounded-lg border bg-card p-6">
+      <div className="rounded-lg border bg-card">
         <SubscriptionsTable subscriptions={subscriptions} />
       </div>
     </div>
