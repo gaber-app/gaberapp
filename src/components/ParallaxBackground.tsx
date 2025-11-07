@@ -7,7 +7,7 @@ export default function ParallaxBackground() {
         className="absolute inset-0 w-full h-full opacity-20 mix-blend-multiply"
         style={{
           backgroundImage: `url(${morphBg})`,
-          backgroundSize: 'contain',
+          backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
         }}
