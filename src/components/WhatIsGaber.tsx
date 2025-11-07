@@ -59,7 +59,9 @@ export default function WhatIsGaber() {
         </h2>
 
         <div ref={contentRef} className="max-w-2xl text-left mb-16">
-          <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl">Gaber (Կապեր) is the premier professional networking app designed exclusively for the US-based Armenian diaspora. Our mission is to strengthen the Armenian community in the United States by providing a dedicated digital space for professional connection.</p>
+          <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl">
+            Gaber (Կապեր) is the premier professional networking app designed exclusively for the US-based Armenian diaspora. Our mission is to strengthen the Armenian community in the United States by providing a dedicated digital space for professional connection. Learn more about <button onClick={() => document.getElementById('our-vision')?.scrollIntoView({ behavior: 'smooth' })} className="text-primary hover:underline font-semibold">our vision</button> for the future.
+          </p>
         </div>
 
         <div ref={cardsRef} className="grid grid-cols-1 gap-6 md:grid-cols-3 w-full">

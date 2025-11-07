@@ -40,7 +40,9 @@ export default function About() {
         </h2>
 
         <div ref={manifestoRef} className="max-w-2xl text-left">
-          <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl">Gaber aims to be a vibrant, inclusive community where every Armenian professional can connect, feel a sense of belonging, and have the opportunity to thrive. It connects people from all backgrounds—recent graduates, executives, entrepreneurs, etc.—regardless of their profession or location.</p>
+          <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl">
+            Gaber aims to be a vibrant, inclusive community where every Armenian professional can connect, feel a sense of belonging, and have the opportunity to thrive. It connects people from all backgrounds—recent graduates, executives, entrepreneurs, etc.—regardless of their profession or location. Ready to be part of this community? <button onClick={() => document.getElementById('subscription-form')?.scrollIntoView({ behavior: 'smooth' })} className="text-primary hover:underline font-semibold">Join the waitlist</button> today.
+          </p>
         </div>
       </div>
     </section>;
