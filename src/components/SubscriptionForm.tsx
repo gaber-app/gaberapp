@@ -121,7 +121,7 @@ export default function SubscriptionForm() {
         >
           
           <div className="relative">
-            <h2 className="mb-4 text-center text-3xl font-semibold tracking-tight text-card-foreground sm:text-4xl">
+            <h2 className="mb-4 text-center text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
               Be Among the First
             </h2>
             <p className="mb-8 text-center text-base font-light text-card-foreground sm:text-lg">
