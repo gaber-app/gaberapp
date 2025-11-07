@@ -29,9 +29,7 @@ const Footer = () => {
           <div className="flex flex-col items-start">
             <h3 className="font-semibold mb-4">Legal</h3>
             <div className="flex flex-col gap-2 text-left">
-              <a href="/Gaber_Terms_of_Use.pdf" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                Terms & Conditions
-              </a>
+              <a href="/Gaber_Terms_of_Use.pdf" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">Terms of Use</a>
               <a href="/Gaber_Privacy_Policy.pdf" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                 Privacy Policy
               </a>
