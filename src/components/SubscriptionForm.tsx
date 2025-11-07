@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
 import { supabase } from '@/integrations/supabase/client';
+import { trackConversion } from '@/lib/analytics';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -74,6 +75,9 @@ export default function SubscriptionForm() {
         });
         throw new Error(error.message || 'Failed to submit');
       }
+      
+      // Track successful conversion
+      trackConversion.waitlistSignup(validated.email);
       
       toast({
         title: "Welcome to Gaber!",

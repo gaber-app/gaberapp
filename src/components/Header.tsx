@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import gaberLogo from '@/assets/gaber-logo-color.svg';
+import { trackConversion } from '@/lib/analytics';
 import {
   Sheet,
   SheetContent,
@@ -35,6 +36,7 @@ export default function Header() {
   );
 
   const scrollToSection = (id: string) => {
+    trackConversion.navigationClick(id);
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
     setIsMenuOpen(false);

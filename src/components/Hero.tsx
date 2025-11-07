@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 import { Button } from '@/components/ui/button';
+import { trackConversion } from '@/lib/analytics';
 gsap.registerPlugin(SplitText, useGSAP);
 export default function Hero() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -63,6 +64,7 @@ export default function Hero() {
     scope: sectionRef
   });
   const scrollToForm = () => {
+    trackConversion.buttonClick('Join the Waitlist', 'Hero Section');
     const formElement = document.getElementById('subscription-form');
     formElement?.scrollIntoView({
       behavior: 'smooth'

@@ -36,6 +36,20 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/ago7SvKUseRsMifFUxrVfBUsrgo2/uploads/1762276358905-G.svg">
     
+    <!-- Google Analytics 4 -->
+    <!-- Replace GA_MEASUREMENT_ID with your actual Google Analytics 4 Measurement ID -->
+    <!-- Get your ID from: https://analytics.google.com/analytics/web/ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID', {
+        page_path: window.location.pathname,
+        send_page_view: true
+      });
+    </script>
+    
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
