@@ -19,7 +19,7 @@ const Footer = () => {
           {/* Email */}
           <div className="flex flex-col items-start">
             <h3 className="font-semibold mb-4">Contact</h3>
-            <a href="mailto:contact@example.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <a href="mailto:feedback@gaberapp.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Mail className="w-5 h-5" />
               <span>feedback@gaberapp.com</span>
             </a>
