@@ -131,7 +131,7 @@ export default function SubscriptionForm() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
                 <div>
-                  <label htmlFor="firstName" className="mb-2 block text-sm font-light text-card-foreground">
+                  <label htmlFor="firstName" className="mb-2 block text-sm font-normal text-card-foreground">
                     First Name
                   </label>
                   <Input
@@ -144,7 +144,6 @@ export default function SubscriptionForm() {
                         setErrors(prev => ({ ...prev, firstName: undefined }));
                       }
                     }}
-                    placeholder="Sosi"
                     className={`h-12 bg-white text-base border-2 transition-all duration-300 focus:border-primary ${
                       errors.firstName ? 'border-destructive focus:border-destructive' : 'border-gray-200'
                     }`}
@@ -155,7 +154,7 @@ export default function SubscriptionForm() {
                 </div>
                 
                 <div>
-                  <label htmlFor="lastName" className="mb-2 block text-sm font-light text-card-foreground">
+                  <label htmlFor="lastName" className="mb-2 block text-sm font-normal text-card-foreground">
                     Last Name
                   </label>
                   <Input
@@ -168,7 +167,6 @@ export default function SubscriptionForm() {
                         setErrors(prev => ({ ...prev, lastName: undefined }));
                       }
                     }}
-                    placeholder="Vartanian"
                     className={`h-12 bg-white text-base border-2 transition-all duration-300 focus:border-primary ${
                       errors.lastName ? 'border-destructive focus:border-destructive' : 'border-gray-200'
                     }`}
@@ -180,7 +178,7 @@ export default function SubscriptionForm() {
               </div>
 
               <div>
-                <label htmlFor="email" className="mb-2 block text-sm font-light text-card-foreground">
+                <label htmlFor="email" className="mb-2 block text-sm font-normal text-card-foreground">
                   Email Address
                 </label>
                 <Input
@@ -193,7 +191,6 @@ export default function SubscriptionForm() {
                       setErrors(prev => ({ ...prev, email: undefined }));
                     }
                   }}
-                  placeholder="sosi@example.com"
                   className={`h-12 bg-white text-base border-2 transition-all duration-300 focus:border-primary ${
                     errors.email ? 'border-destructive focus:border-destructive' : 'border-gray-200'
                   }`}

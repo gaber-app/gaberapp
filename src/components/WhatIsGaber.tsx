@@ -9,8 +9,11 @@ export default function WhatIsGaber() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const headingRef = useRef<HTMLHeadingElement | null>(null);
   const contentRef = useRef<HTMLDivElement | null>(null);
+  const cardsRef = useRef<HTMLDivElement | null>(null);
+  
   useGSAP(() => {
-    if (!headingRef.current || !contentRef.current) return;
+    if (!headingRef.current || !contentRef.current || !cardsRef.current) return;
+    
     gsap.from(headingRef.current, {
       scrollTrigger: {
         trigger: headingRef.current,
@@ -21,6 +24,7 @@ export default function WhatIsGaber() {
       duration: 1,
       ease: 'power3.out'
     });
+    
     gsap.from(contentRef.current, {
       scrollTrigger: {
         trigger: contentRef.current,
@@ -30,6 +34,19 @@ export default function WhatIsGaber() {
       autoAlpha: 0,
       duration: 1,
       delay: 0.2,
+      ease: 'power3.out'
+    });
+    
+    gsap.from(cardsRef.current.children, {
+      scrollTrigger: {
+        trigger: cardsRef.current,
+        start: 'top 80%'
+      },
+      y: 40,
+      autoAlpha: 0,
+      duration: 1,
+      stagger: 0.15,
+      delay: 0.4,
       ease: 'power3.out'
     });
   }, {
@@ -45,7 +62,7 @@ export default function WhatIsGaber() {
           <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl">Gaber (Կապեր) is the premier professional networking app designed exclusively for the US-based Armenian diaspora. Our mission is to strengthen the Armenian community in the United States by providing a dedicated digital space for professional connection.</p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 w-full">
+        <div ref={cardsRef} className="grid grid-cols-1 gap-6 md:grid-cols-3 w-full">
           <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
             <CardContent className="p-6">
               <Users className="mb-4 h-8 w-8 text-primary" />
