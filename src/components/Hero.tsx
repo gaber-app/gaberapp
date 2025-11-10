@@ -114,7 +114,7 @@ export default function Hero() {
     >
       <div className="relative w-full py-32 md:py-40">
         <div className="w-full">
-          <div className="flex flex-col flex-row items-center justify-between gap-12 lg:gap-16">
+          <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-16">
             {/* Text Content */}
             <div className="flex-1 text-left space-y-8">
               <h1
