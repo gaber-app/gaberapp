@@ -2,8 +2,10 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
+import Lottie from 'lottie-react';
 import { Button } from '@/components/ui/button';
 import { trackConversion } from '@/lib/analytics';
+import animationData from '@/assets/showreel-animation.json';
 gsap.registerPlugin(SplitText, useGSAP);
 export default function Hero() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -91,9 +93,13 @@ export default function Hero() {
             </div>
           </div>
 
-            {/* Video Section */}
-            <div className="flex-shrink-0">
-              
+            {/* Animation Section */}
+            <div className="flex-shrink-0 w-full lg:w-auto lg:max-w-xl">
+              <Lottie 
+                animationData={animationData}
+                loop={true}
+                className="w-full h-auto"
+              />
             </div>
           </div>
         </div>
