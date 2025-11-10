@@ -112,7 +112,7 @@ export default function Hero() {
       ref={sectionRef}
       className="relative min-h-screen w-full overflow-hidden flex items-center justify-center pt-20 pb-16 md:pb-20 lg:pb-24 px-4 md:px-6 lg:px-16"
     >
-      <div className="relative w-full pt-32 md:pt-40">
+      <div className="relative w-full md:pt-40">
         <div className="w-full">
           <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-16">
             {/* Text Content */}
