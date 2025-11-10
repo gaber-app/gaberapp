@@ -99,7 +99,7 @@ export default function Hero() {
             </h1>
 
             <div className="max-w-2xl">
-              <p ref={paraRef} className="text-lg font-medium leading-relaxed tracking-tight text-foreground sm:text-lg md:text-xl py-6">The premier professional networking platform uniting the Armenian diaspora. Building bridges, creating opportunities, strengthening our community.</p>
+              <p ref={paraRef} className="text-lg font-medium leading-relaxed tracking-tight text-foreground sm:text-lg md:text-xl">The premier professional networking platform uniting the Armenian diaspora. Building bridges, creating opportunities, strengthening our community.</p>
             </div>
 
             <div ref={ctaRef}>
@@ -110,7 +110,7 @@ export default function Hero() {
           </div>
 
             {/* Animation Section */}
-            <div ref={lottieRef} className="flex-shrink-0 w-full lg:w-auto lg:max-w-xl mt-16 sm:mt-20 md:mt-24 lg:mt-0">
+            <div ref={lottieRef} className="flex-shrink-0 w-full lg:w-auto lg:max-w-xl">
               <Lottie 
                 animationData={animationData}
                 loop={true}
