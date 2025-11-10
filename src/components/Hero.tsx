@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
@@ -13,6 +13,7 @@ export default function Hero() {
   const paraRef = useRef<HTMLParagraphElement | null>(null);
   const ctaRef = useRef<HTMLDivElement | null>(null);
   const lottieRef = useRef<HTMLDivElement | null>(null);
+  const [lottieError, setLottieError] = useState(false);
   useGSAP(
     () => {
       if (!headerRef.current) return;
@@ -148,7 +149,33 @@ export default function Hero() {
 
             {/* Animation Section */}
             <div ref={lottieRef} className="flex-shrink-0 w-full lg:w-auto lg:max-w-xl">
-              <Lottie animationData={animationData} loop={true} className="w-full h-auto mx-auto" />
+              {lottieError ? (
+                <div className="w-full h-96 flex items-center justify-center bg-muted/20 rounded-lg">
+                  <p className="text-muted-foreground">Animation could not be loaded</p>
+                </div>
+              ) : (
+                <Lottie 
+                  animationData={animationData} 
+                  loop={true} 
+                  className="w-full h-auto mx-auto"
+                  style={{ width: '100%', height: 'auto' }}
+                  rendererSettings={{
+                    preserveAspectRatio: 'xMidYMid slice',
+                    progressiveLoad: true,
+                    hideOnTransparent: true
+                  }}
+                  onDataReady={() => {
+                    console.log('Lottie animation loaded successfully');
+                  }}
+                  onLoadedImages={() => {
+                    console.log('Lottie images loaded');
+                  }}
+                  onError={(error) => {
+                    console.error('Lottie error:', error);
+                    setLottieError(true);
+                  }}
+                />
+              )}
             </div>
           </div>
         </div>
