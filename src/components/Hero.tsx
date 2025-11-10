@@ -73,10 +73,11 @@ export default function Hero() {
     });
   };
   return <section ref={sectionRef} className="relative min-h-screen w-full overflow-hidden flex items-center justify-center pt-20 px-4 md:px-6 lg:px-16">
-        <div className="relative max-w-6xl w-full mx-auto py-32 md:py-40">
+      <div className="relative w-full py-32 md:py-40">
+        <div className="w-full">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
             {/* Text Content */}
-            <div className="text-left space-y-8">
+            <div className="flex-1 text-left space-y-8">
             <h1 ref={headerRef} className="text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
               Armenian roots. <br className="hidden md:block" /><span className="md:whitespace-nowrap">Modern connections.</span>
             </h1>
@@ -102,5 +103,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
+      </div>
     </section>;
 }
