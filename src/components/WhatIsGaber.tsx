@@ -56,7 +56,7 @@ export default function WhatIsGaber() {
     },
   );
   return (
-    <section id="what-is-gaber" ref={sectionRef} className="relative pt-0 lg:pt-24 pb-24 px-4 md:px-6 lg:px-16">
+    <section id="what-is-gaber" ref={sectionRef} className="relative py-16 md:py-20 lg:py-24 px-4 md:px-6 lg:px-16">
       <div className="w-full mx-auto">
         <h2
           ref={headingRef}
