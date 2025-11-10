@@ -94,11 +94,11 @@ export default function Hero() {
           </div>
 
             {/* Animation Section */}
-            <div className="flex-shrink-0 w-full lg:w-auto lg:max-w-xl max-w-full">
+            <div className="flex-shrink-0 w-full lg:w-auto lg:max-w-xl">
               <Lottie 
                 animationData={animationData}
                 loop={true}
-                className="w-full h-auto max-w-full"
+                className="w-full h-auto mx-auto"
               />
             </div>
           </div>
