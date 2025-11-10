@@ -1,10 +1,9 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import Lottie from "lottie-react";
 import { Button } from "@/components/ui/button";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { trackConversion } from "@/lib/analytics";
 import animationData from "@/assets/showreel-animation.json";
 gsap.registerPlugin(SplitText, useGSAP);
@@ -14,7 +13,6 @@ export default function Hero() {
   const paraRef = useRef<HTMLParagraphElement | null>(null);
   const ctaRef = useRef<HTMLDivElement | null>(null);
   const lottieRef = useRef<HTMLDivElement | null>(null);
-  const [lottieError, setLottieError] = useState(false);
   useGSAP(
     () => {
       if (!headerRef.current) return;
@@ -36,6 +34,13 @@ export default function Hero() {
         }
         if (ctaRef.current) {
           gsap.set(ctaRef.current, {
+            autoAlpha: 0,
+            y: 20,
+          });
+        }
+
+        if (lottieRef.current) {
+          gsap.set(lottieRef.current, {
             autoAlpha: 0,
             y: 20,
           });
@@ -75,6 +80,18 @@ export default function Hero() {
               duration: 0.8,
             },
             "-=0.5",
+          );
+        }
+
+        if (lottieRef.current) {
+          tl.to(
+            lottieRef.current,
+            {
+              autoAlpha: 1,
+              y: 0,
+              duration: 0.8,
+            },
+            "-=0.6",
           );
         }
       });
@@ -131,33 +148,7 @@ export default function Hero() {
 
             {/* Animation Section */}
             <div ref={lottieRef} className="flex-shrink-0 w-full lg:w-auto lg:max-w-xl">
-              {lottieError ? (
-                <div className="w-full h-96 flex items-center justify-center bg-muted/20 rounded-lg">
-                  <p className="text-muted-foreground">Animation could not be loaded</p>
-                </div>
-              ) : (
-                <AspectRatio ratio={1}>
-                  <div className="relative w-full h-full overflow-hidden rounded-xl bg-muted/10 border border-border">
-                    <Lottie 
-                      animationData={animationData} 
-                      loop={true}
-                      className="absolute inset-0 w-full h-full"
-                      style={{ width: '100%', height: '100%' }}
-                      rendererSettings={{
-                        preserveAspectRatio: 'xMidYMid meet',
-                        progressiveLoad: true
-                      }}
-                      onLoadedImages={() => {
-                        console.log('Lottie images loaded');
-                      }}
-                      onError={(error) => {
-                        console.error('Lottie error:', error);
-                        setLottieError(true);
-                      }}
-                    />
-                  </div>
-                </AspectRatio>
-              )}
+              <Lottie animationData={animationData} loop={true} className="w-full h-auto mx-auto" />
             </div>
           </div>
         </div>
