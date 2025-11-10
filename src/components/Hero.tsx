@@ -76,7 +76,7 @@ export default function Hero() {
         <div className="relative max-w-6xl w-full mx-auto py-32 md:py-40">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
             {/* Text Content */}
-            <div className="flex-1 text-left space-y-8">
+            <div className="text-left space-y-8">
             <h1 ref={headerRef} className="text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
               Armenian roots. <br className="hidden md:block" /><span className="md:whitespace-nowrap">Modern connections.</span>
             </h1>
