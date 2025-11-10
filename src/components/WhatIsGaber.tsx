@@ -52,7 +52,7 @@ export default function WhatIsGaber() {
   }, {
     scope: sectionRef
   });
-  return <section id="what-is-gaber" ref={sectionRef} className="relative pt-24 pb-24 px-4 md:px-6 lg:px-16">
+  return <section id="what-is-gaber" ref={sectionRef} className="relative pt-0 lg:pt-24 pb-24 px-4 md:px-6 lg:px-16">
       <div className="max-w-6xl w-full mx-auto">
         <h2 ref={headingRef} className="mb-12 text-left text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
           What is Gaber?
