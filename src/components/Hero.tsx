@@ -12,6 +12,7 @@ export default function Hero() {
   const headerRef = useRef<HTMLHeadingElement | null>(null);
   const paraRef = useRef<HTMLParagraphElement | null>(null);
   const ctaRef = useRef<HTMLDivElement | null>(null);
+  const lottieRef = useRef<HTMLDivElement | null>(null);
   useGSAP(() => {
     if (!headerRef.current) return;
     document.fonts.ready.then(() => {
@@ -32,6 +33,13 @@ export default function Hero() {
       }
       if (ctaRef.current) {
         gsap.set(ctaRef.current, {
+          autoAlpha: 0,
+          y: 20
+        });
+      }
+
+      if (lottieRef.current) {
+        gsap.set(lottieRef.current, {
           autoAlpha: 0,
           y: 20
         });
@@ -60,6 +68,14 @@ export default function Hero() {
           y: 0,
           duration: 0.8
         }, '-=0.5');
+      }
+
+      if (lottieRef.current) {
+        tl.to(lottieRef.current, {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.8
+        }, '-=0.6');
       }
     });
   }, {
@@ -94,7 +110,7 @@ export default function Hero() {
           </div>
 
             {/* Animation Section */}
-            <div className="flex-shrink-0 w-full lg:w-auto lg:max-w-xl mt-16 sm:mt-20 md:mt-24 lg:mt-0">
+            <div ref={lottieRef} className="flex-shrink-0 w-full lg:w-auto lg:max-w-xl mt-16 sm:mt-20 md:mt-24 lg:mt-0">
               <Lottie 
                 animationData={animationData}
                 loop={true}
