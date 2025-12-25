@@ -1,1 +1,7 @@
 project_id = "knvascpavarwwruuqexd"
+
+[functions.create-admin-user]
+verify_jwt = true
+
+[functions.submit-subscription]
+verify_jwt = false

@@ -11,6 +11,8 @@ import { trackConversion } from '@/lib/analytics';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+
 const formSchema = z.object({
   firstName: z.string().trim().min(2, { message: "Please enter your first name" }).max(50),
   lastName: z.string().trim().min(2, { message: "Please enter your last name" }).max(50),
@@ -57,23 +59,23 @@ export default function SubscriptionForm() {
       const validated = formSchema.parse({ firstName, lastName, email });
       setIsSubmitting(true);
       
-      // Save to database
-      const { error } = await supabase
-        .from('subscriptions')
-        .insert({
-          first_name: validated.firstName,
-          last_name: validated.lastName,
+      // Submit via edge function with rate limiting
+      const response = await fetch(`${SUPABASE_URL}/functions/v1/submit-subscription`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: validated.firstName,
+          lastName: validated.lastName,
           email: validated.email,
-        });
+        }),
+      });
 
-      if (error) {
-        console.error('Subscription error details:', {
-          message: error.message,
-          details: error.details,
-          hint: error.hint,
-          code: error.code
-        });
-        throw new Error(error.message || 'Failed to submit');
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit');
       }
       
       // Track successful conversion
