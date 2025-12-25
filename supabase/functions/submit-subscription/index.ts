@@ -135,13 +135,14 @@ Deno.serve(async (req) => {
       });
     }
 
-    // Insert subscription
+    // Insert subscription with consent timestamp
     const { error: subscriptionError } = await supabase
       .from("subscriptions")
       .insert({
         first_name: firstName,
         last_name: lastName,
         email: email,
+        consented_at: new Date().toISOString(),
       });
 
     if (subscriptionError) {

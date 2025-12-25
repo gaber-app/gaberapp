@@ -218,8 +218,18 @@ export default function SubscriptionForm() {
               </Button>
             </form>
 
-            <p className="mt-6 text-center text-xs font-light text-muted-foreground">
-              We respect your privacy. Your information will never be shared.
+            <p className="mt-6 text-center text-xs font-light text-muted-foreground leading-relaxed">
+              By joining the waitlist, you agree to receive product updates and marketing 
+              communications from Gaber. We process your data in accordance with our{' '}
+              <a 
+                href="/Gaber_Privacy_Policy.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="underline hover:text-foreground transition-colors"
+              >
+                Privacy Policy
+              </a>
+              . You can unsubscribe at any time.
             </p>
           </div>
         </div>

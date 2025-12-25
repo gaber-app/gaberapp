@@ -55,6 +55,7 @@ export type Database = {
       }
       subscriptions: {
         Row: {
+          consented_at: string
           created_at: string
           email: string
           first_name: string
@@ -62,6 +63,7 @@ export type Database = {
           last_name: string
         }
         Insert: {
+          consented_at?: string
           created_at?: string
           email: string
           first_name: string
@@ -69,6 +71,7 @@ export type Database = {
           last_name: string
         }
         Update: {
+          consented_at?: string
           created_at?: string
           email?: string
           first_name?: string
