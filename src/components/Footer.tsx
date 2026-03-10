@@ -1,4 +1,5 @@
 import { Instagram, Linkedin, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="relative bg-primary text-primary-foreground py-12 px-4 md:px-6 lg:px-16">
@@ -25,8 +26,12 @@ const Footer = () => {
             </a>
           </div>
 
-          {/* Legal Links */}
+          {/* Links */}
           <div className="flex flex-col items-start">
+            <h3 className="font-semibold mb-4">Explore</h3>
+            <div className="flex flex-col gap-2 text-left mb-4">
+              <Link to="/our-story" className="hover:opacity-80 transition-opacity">Our Story</Link>
+            </div>
             <h3 className="font-semibold mb-4">Legal</h3>
             <div className="flex flex-col gap-2 text-left">
               <a href="/Gaber_Terms_of_Use.pdf" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">Terms of Use</a>
