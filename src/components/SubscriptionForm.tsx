@@ -130,7 +130,7 @@ export default function SubscriptionForm() {
             <h3 className="mb-4 text-center text-2xl font-semibold tracking-tight text-card-foreground sm:text-3xl md:text-4xl">
               Be Among the First
             </h3>
-            <p className="mb-8 text-center text-base font-light text-card-foreground sm:text-lg">
+            <p className="mb-8 text-center text-base font-light text-card-foreground sm:text-lg max-w-none w-full">
               Join our exclusive waitlist and get early access to Gaber when we launch.
             </p>
 
