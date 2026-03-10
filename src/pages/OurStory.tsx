@@ -63,10 +63,6 @@ export default function OurStory() {
               I returned home from In Vino one night, suddenly angry at the state of my being. It was late, and I was exhausted from walking all day in the late September heat that "strangely" engulfed Yerevan at that time of year. But what did I know about weather patterns in Yerevan? It was my first time back in Armenia after fourteen years.
             </p>
 
-            <p className="font-medium">
-              Immediately upon entering the apartment, I heard the likes of Whitney Houston coming from beyond my dining room table. I opened the door to the balcony and, lo and behold, yet another Armenian with an outrageous set of chops. Somewhere in the distance, they were belting out the most perfect rendition of "I Wanna Dance With Somebody" I had ever heard. This theme followed me throughout my trip.
-            </p>
-
             <blockquote className="my-10 border-l-4 border-primary px-6 py-4 bg-primary/5 rounded-r-lg">
               <p className="text-xl sm:text-2xl italic text-foreground font-light">
                 "Armenia is a country with a surplus of talent."
@@ -74,11 +70,15 @@ export default function OurStory() {
             </blockquote>
 
             <p className="font-medium">
-              I thought to myself, <em>"Why am I the only one without a single talent to contribute to greater Armenian society?"</em> That was an exaggeration, of course, but it sure did feel like it.
+              Immediately upon entering the apartment, I heard the likes of Whitney Houston coming from beyond my dining room table. I opened the door to the balcony and, lo and behold, yet another Armenian with an outrageous set of chops. Somewhere in the distance, they were belting out the most perfect rendition of "I Wanna Dance With Somebody" I had ever heard. This theme followed me throughout my trip.
             </p>
 
             <p className="font-medium">
-              I closed the balcony door, grabbed my laptop, and plopped myself onto the eight-foot-long leather sofa in the living room of my four-story walk-up. I flipped up the screen, and performed the following Google search… <em>"how do i contribute to armenian society when i have no talent"</em> (pictured above, taken from my seat on the sofa).
+              I thought to myself, <em>"Why am I the only one without a single talent to contribute to greater Armenian society?"</em> That was an exaggeration, of course, but it sure did feel like it.
+            </p>
+
+            <p className="font-medium">I closed the balcony door, grabbed my laptop, and plopped myself onto the eight-foot-long leather sofa in the living room of my four-story walk-up. I flipped up the screen, and performed the following Google search… "how do i contribute to armenian society when i have no talent".
+              <em>"how do i contribute to armenian society when i have no talent"</em> (pictured above, taken from my seat on the sofa).
             </p>
 
             <figure className="my-8">
@@ -117,8 +117,14 @@ export default function OurStory() {
               This was one of many recurring experiences I had with Armenians that led me to build Gaber.
             </p>
 
+            <blockquote className="my-10 border-l-4 border-primary px-6 py-4 bg-primary/5 rounded-r-lg">
+              <p className="text-xl sm:text-2xl italic text-foreground font-light">
+                "There is no digital space for us to network collectively, across industries, just for us."
+              </p>
+            </blockquote>
+
             <p className="font-medium">
-              Armenians in the States do not have a way to connect with one another professionally. And please don't get me started on LinkedIn… There is no digital space for us to network collectively, across industries, just for us.
+              Armenians in the States do not have a way to connect with one another professionally. And please don't get me started on LinkedIn…
             </p>
 
             <p className="font-medium">
