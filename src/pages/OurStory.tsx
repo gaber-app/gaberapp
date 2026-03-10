@@ -63,7 +63,7 @@ export default function OurStory() {
               I returned home from In Vino one night, suddenly angry at the state of my being. It was late, and I was exhausted from walking all day in the late September heat that "strangely" engulfed Yerevan at that time of year. But what did I know about weather patterns in Yerevan? It was my first time back in Armenia after fourteen years.
             </p>
 
-            <blockquote className="my-10 border-l-4 border-primary pl-6 py-4 bg-primary/5 rounded-r-lg">
+            <blockquote className="my-10 border-l-4 border-primary px-6 py-4 bg-primary/5 rounded-r-lg">
               <p className="text-xl sm:text-2xl font-medium italic text-foreground">
                 "Armenia is a country with a surplus of talent."
               </p>
@@ -117,7 +117,7 @@ export default function OurStory() {
               This was one of many recurring experiences I had with Armenians that led me to build Gaber.
             </p>
 
-            <blockquote className="my-10 border-l-4 border-primary pl-6 py-4 bg-primary/5 rounded-r-lg">
+            <blockquote className="my-10 border-l-4 border-primary px-6 py-4 bg-primary/5 rounded-r-lg">
               <p className="text-xl sm:text-2xl font-medium italic text-foreground">
                 "There is no digital space for us to network collectively, across industries, just for us."
               </p>
@@ -139,7 +139,7 @@ export default function OurStory() {
               Gaber is my way of paying these connections and influences forward. My team and I have built this for our community, and I can't wait to see what ties of your own you create here.
             </p>
 
-            <blockquote className="my-10 border-l-4 border-primary pl-6 py-4 bg-primary/5 rounded-r-lg">
+            <blockquote className="my-10 border-l-4 border-primary px-6 py-4 bg-primary/5 rounded-r-lg">
               <p className="text-xl sm:text-2xl font-medium italic text-foreground">
                 "We are only as strong as the ties that bind us."
               </p>
