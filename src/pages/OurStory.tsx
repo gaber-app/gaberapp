@@ -117,14 +117,8 @@ export default function OurStory() {
               This was one of many recurring experiences I had with Armenians that led me to build Gaber.
             </p>
 
-            <blockquote className="my-10 border-l-4 border-primary px-6 py-4 bg-primary/5 rounded-r-lg">
-              <p className="text-xl sm:text-2xl italic text-foreground font-light">
-                "There is no digital space for us to network collectively, across industries, just for us."
-              </p>
-            </blockquote>
-
             <p className="font-medium">
-              Armenians in the States do not have a way to connect with one another professionally. And please don't get me started on LinkedIn…
+              Armenians in the States do not have a way to connect with one another professionally. And please don't get me started on LinkedIn… There is no digital space for us to network collectively, across industries, just for us.
             </p>
 
             <p className="font-medium">
