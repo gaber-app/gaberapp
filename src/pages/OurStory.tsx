@@ -63,15 +63,15 @@ export default function OurStory() {
               I returned home from In Vino one night, suddenly angry at the state of my being. It was late, and I was exhausted from walking all day in the late September heat that "strangely" engulfed Yerevan at that time of year. But what did I know about weather patterns in Yerevan? It was my first time back in Armenia after fourteen years.
             </p>
 
+            <p className="font-medium">
+              Immediately upon entering the apartment, I heard the likes of Whitney Houston coming from beyond my dining room table. I opened the door to the balcony and, lo and behold, yet another Armenian with an outrageous set of chops. Somewhere in the distance, they were belting out the most perfect rendition of "I Wanna Dance With Somebody" I had ever heard. This theme followed me throughout my trip.
+            </p>
+
             <blockquote className="my-10 border-l-4 border-primary px-6 py-4 bg-primary/5 rounded-r-lg">
               <p className="text-xl sm:text-2xl italic text-foreground font-light">
                 "Armenia is a country with a surplus of talent."
               </p>
             </blockquote>
-
-            <p className="font-medium">
-              Immediately upon entering the apartment, I heard the likes of Whitney Houston coming from beyond my dining room table. I opened the door to the balcony and, lo and behold, yet another Armenian with an outrageous set of chops. Somewhere in the distance, they were belting out the most perfect rendition of "I Wanna Dance With Somebody" I had ever heard. This theme followed me throughout my trip.
-            </p>
 
             <p className="font-medium">
               I thought to myself, <em>"Why am I the only one without a single talent to contribute to greater Armenian society?"</em> That was an exaggeration, of course, but it sure did feel like it.
