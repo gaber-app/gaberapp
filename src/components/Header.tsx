@@ -120,7 +120,7 @@ export default function Header() {
             to="/our-story"
             className={`hidden md:block text-base font-medium tracking-tight transition-colors duration-300 ${
               location.pathname === '/our-story'
-                ? 'text-primary/60'
+                ? 'text-primary border-b-2 border-primary pb-0.5'
                 : 'text-primary hover:text-primary/80'
             }`}
           >
