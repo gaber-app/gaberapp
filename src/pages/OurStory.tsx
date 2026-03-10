@@ -49,7 +49,7 @@ export default function OurStory() {
 
   return (
     <main className="relative min-h-screen w-full">
-      <ParallaxBackground />
+      <ParallaxBackground opacity={8} />
       <Header />
 
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 lg:pb-24 px-4 md:px-6 lg:px-16">
