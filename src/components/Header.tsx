@@ -162,18 +162,18 @@ export default function Header() {
                   <X className="h-7 w-7" />
                 </button>
               </SheetHeader>
-              <nav className="flex flex-col gap-3 mt-8">
+              <nav className="flex flex-col gap-6 mt-8">
                 {isHome ? (
                   <>
                     <button
                       onClick={() => handleSectionLink('what-is-gaber')}
-                      className="text-left text-lg font-medium tracking-tight text-foreground transition-colors duration-300 hover:text-primary py-3 px-4 rounded-lg hover:bg-primary/10"
+                      className="text-left text-base font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
                     >
                       What is Gaber?
                     </button>
                     <button
                       onClick={() => handleSectionLink('our-vision')}
-                      className="text-left text-lg font-medium tracking-tight text-foreground transition-colors duration-300 hover:text-primary py-3 px-4 rounded-lg hover:bg-primary/10"
+                      className="text-left text-base font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
                     >
                       Our Vision
                     </button>
@@ -183,14 +183,14 @@ export default function Header() {
                     <Link
                       to="/#what-is-gaber"
                       onClick={() => setIsMenuOpen(false)}
-                      className="text-left text-lg font-medium tracking-tight text-foreground transition-colors duration-300 hover:text-primary py-3 px-4 rounded-lg hover:bg-primary/10"
+                      className="text-base font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
                     >
                       What is Gaber?
                     </Link>
                     <Link
                       to="/#our-vision"
                       onClick={() => setIsMenuOpen(false)}
-                      className="text-left text-lg font-medium tracking-tight text-foreground transition-colors duration-300 hover:text-primary py-3 px-4 rounded-lg hover:bg-primary/10"
+                      className="text-base font-medium tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
                     >
                       Our Vision
                     </Link>
@@ -200,10 +200,10 @@ export default function Header() {
                 <Link
                   to="/our-story"
                   onClick={() => setIsMenuOpen(false)}
-                  className={`text-left text-lg font-medium tracking-tight transition-colors duration-300 py-3 px-4 rounded-lg ${
+                  className={`text-base font-medium tracking-tight transition-colors duration-300 ${
                     location.pathname === '/our-story'
-                      ? 'text-primary border-l-4 border-primary bg-primary/10'
-                      : 'text-foreground hover:text-primary hover:bg-primary/10'
+                      ? 'text-primary border-b-2 border-primary pb-0.5 self-start'
+                      : 'text-primary hover:text-primary/80'
                   }`}
                 >
                   Our Story
@@ -212,17 +212,17 @@ export default function Header() {
                 {isHome ? (
                   <button
                     onClick={() => handleSectionLink('subscription-form')}
-                    className="text-left text-lg font-medium tracking-tight text-primary-foreground transition-colors duration-300 py-3 px-4 rounded-lg bg-primary hover:bg-primary/90"
+                    className="self-start rounded-full border border-primary bg-primary/10 px-6 py-2.5 text-base font-medium tracking-tight text-primary backdrop-blur-sm transition-all duration-300 hover:bg-primary/20 hover:border-primary"
                   >
-                    Join Waitlist
+                    Join
                   </button>
                 ) : (
                   <Link
                     to="/#subscription-form"
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-left text-lg font-medium tracking-tight text-primary-foreground transition-colors duration-300 py-3 px-4 rounded-lg bg-primary hover:bg-primary/90"
+                    className="self-start rounded-full border border-primary bg-primary/10 px-6 py-2.5 text-base font-medium tracking-tight text-primary backdrop-blur-sm transition-all duration-300 hover:bg-primary/20 hover:border-primary"
                   >
-                    Join Waitlist
+                    Join
                   </Link>
                 )}
               </nav>
