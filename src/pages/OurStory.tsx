@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Linkedin } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ParallaxBackground from '@/components/ParallaxBackground';
