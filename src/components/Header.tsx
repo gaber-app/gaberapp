@@ -212,7 +212,7 @@ export default function Header() {
                 {isHome ? (
                   <button
                     onClick={() => handleSectionLink('subscription-form')}
-                    className="self-start rounded-full border border-primary bg-primary/10 px-6 py-2.5 text-base font-medium tracking-tight text-primary backdrop-blur-sm transition-all duration-300 hover:bg-primary/20 hover:border-primary"
+                    className="w-full text-center rounded-full border border-primary bg-primary/10 px-6 py-2.5 text-base font-medium tracking-tight text-primary backdrop-blur-sm transition-all duration-300 hover:bg-primary/20 hover:border-primary"
                   >
                     Join
                   </button>
@@ -220,7 +220,7 @@ export default function Header() {
                   <Link
                     to="/#subscription-form"
                     onClick={() => setIsMenuOpen(false)}
-                    className="self-start rounded-full border border-primary bg-primary/10 px-6 py-2.5 text-base font-medium tracking-tight text-primary backdrop-blur-sm transition-all duration-300 hover:bg-primary/20 hover:border-primary"
+                    className="w-full text-center rounded-full border border-primary bg-primary/10 px-6 py-2.5 text-base font-medium tracking-tight text-primary backdrop-blur-sm transition-all duration-300 hover:bg-primary/20 hover:border-primary"
                   >
                     Join
                   </Link>
