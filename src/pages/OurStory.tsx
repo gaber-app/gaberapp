@@ -63,7 +63,7 @@ export default function OurStory() {
               I returned home from In Vino one night, suddenly angry at the state of my being. It was late, and I was exhausted from walking all day in the late September heat that "strangely" engulfed Yerevan at that time of year. But what did I know about weather patterns in Yerevan? It was my first time back in Armenia after fourteen years.
             </p>
 
-            <blockquote className="my-10 border-l-4 border-primary pl-6 py-4 bg-primary/5 rounded-r-lg">
+            <blockquote className="my-10 border-l-4 border-primary px-6 py-4 bg-primary/5 rounded-r-lg">
               <p className="text-xl sm:text-2xl font-medium italic text-foreground">
                 "Armenia is a country with a surplus of talent."
               </p>
