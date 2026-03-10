@@ -9,6 +9,7 @@ import Admin from "./pages/Admin";
 import Subscriptions from "./pages/admin/Subscriptions";
 import Users from "./pages/admin/Users";
 import Settings from "./pages/admin/Settings";
+import OurStory from "./pages/OurStory";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
