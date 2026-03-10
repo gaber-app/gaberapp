@@ -136,8 +136,14 @@ export default function OurStory() {
             </p>
 
             <p>
-              Gaber is my way of paying these connections and influences forward. My team and I have built this for our community, and I can't wait to see what ties of your own you create here. After all, we are only as strong as the ties that bind us.
+              Gaber is my way of paying these connections and influences forward. My team and I have built this for our community, and I can't wait to see what ties of your own you create here.
             </p>
+
+            <blockquote className="my-10 border-l-4 border-primary pl-6 py-4 bg-primary/5 rounded-r-lg">
+              <p className="text-xl sm:text-2xl font-medium italic text-foreground">
+                "We are only as strong as the ties that bind us."
+              </p>
+            </blockquote>
 
             <p className="font-medium text-foreground">
               I hope your ties are as enduring as the ones that brought me here.
