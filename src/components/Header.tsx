@@ -202,7 +202,7 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                   className={`text-left text-lg font-medium tracking-tight transition-colors duration-300 py-3 px-4 rounded-lg ${
                     location.pathname === '/our-story'
-                      ? 'text-primary/60'
+                      ? 'text-primary border-l-4 border-primary bg-primary/10'
                       : 'text-foreground hover:text-primary hover:bg-primary/10'
                   }`}
                 >
