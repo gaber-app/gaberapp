@@ -118,9 +118,11 @@ export default function OurStory() {
               This was one of many recurring experiences I had with Armenians that led me to build Gaber.
             </p>
 
-            <p className="font-medium">Armenians in the States deserve a professional, inclusive, digital space, rooted in shared identity that erases the geographical borders which have long defined our communities.
-
-            </p>
+            <blockquote className="my-10 border-l-4 border-primary px-6 py-4 bg-primary/5 rounded-r-lg">
+              <p className="text-xl sm:text-2xl italic text-foreground font-light">
+                "Armenians in the States deserve a professional, inclusive, digital space, rooted in shared identity that erases the geographical borders which have long defined our communities."
+              </p>
+            </blockquote>
 
             <p className="font-medium">
               In Armenian, Gaber translates to "connections" or "ties." The singular form surfaced so frequently in conversations, both with my mother and friends in Armenia, that pluralizing wasn't just a choice, but an obvious fit.
