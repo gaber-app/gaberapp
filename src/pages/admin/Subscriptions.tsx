@@ -51,6 +51,14 @@ export default function Subscriptions() {
     }
 
     const headers = ['First Name', 'Last Name', 'Email', 'Joined Date'];
+    const sanitizeCell = (value: string): string => {
+      // Escape existing double quotes
+      const escaped = value.replace(/"/g, '""');
+      // Neutralise formula prefixes to prevent CSV injection
+      const safe = /^[=+\-@|%]/.test(escaped) ? `'${escaped}` : escaped;
+      return `"${safe}"`;
+    };
+
     const csvData = subscriptions.map(sub => [
       sub.first_name,
       sub.last_name,
@@ -60,7 +68,7 @@ export default function Subscriptions() {
 
     const csvContent = [
       headers.join(','),
-      ...csvData.map(row => row.map(cell => `"${cell}"`).join(','))
+      ...csvData.map(row => row.map(cell => sanitizeCell(String(cell))).join(','))
     ].join('\n');
 
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
