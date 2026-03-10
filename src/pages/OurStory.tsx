@@ -64,7 +64,7 @@ export default function OurStory() {
             </p>
 
             <blockquote className="my-10 border-l-4 border-primary px-6 py-4 bg-primary/5 rounded-r-lg">
-              <p className="text-xl sm:text-2xl font-medium italic text-foreground">
+              <p className="text-xl sm:text-2xl italic text-foreground font-light">
                 "Armenia is a country with a surplus of talent."
               </p>
             </blockquote>
@@ -118,7 +118,7 @@ export default function OurStory() {
             </p>
 
             <blockquote className="my-10 border-l-4 border-primary px-6 py-4 bg-primary/5 rounded-r-lg">
-              <p className="text-xl sm:text-2xl font-medium italic text-foreground">
+              <p className="text-xl sm:text-2xl italic text-foreground font-light">
                 "There is no digital space for us to network collectively, across industries, just for us."
               </p>
             </blockquote>
@@ -140,7 +140,7 @@ export default function OurStory() {
             </p>
 
             <blockquote className="my-10 border-l-4 border-primary px-6 py-4 bg-primary/5 rounded-r-lg">
-              <p className="text-xl sm:text-2xl font-medium italic text-foreground">
+              <p className="text-xl sm:text-2xl italic text-foreground font-light">
                 "We are only as strong as the ties that bind us."
               </p>
             </blockquote>
