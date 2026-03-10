@@ -1,4 +1,5 @@
 import { Instagram, Linkedin, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="relative bg-primary text-primary-foreground py-12 px-4 md:px-6 lg:px-16">
