@@ -118,8 +118,8 @@ export default function OurStory() {
               This was one of many recurring experiences I had with Armenians that led me to build Gaber.
             </p>
 
-            <p className="font-medium">
-              Armenians in the States do not have a way to connect with one another professionally. And please don't get me started on LinkedIn… There is no digital space for us to network collectively, across industries, just for us.
+            <p className="font-medium">Armenians in the States deserve a professional, inclusive, digital space, rooted in shared identity that erases the geographical borders which have long defined our communities.
+
             </p>
 
             <p className="font-medium">
