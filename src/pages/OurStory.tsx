@@ -75,6 +75,18 @@ export default function OurStory() {
               I closed the balcony door, grabbed my laptop, and plopped myself onto the eight-foot-long leather sofa in the living room of my four-story walk-up. I flipped up the screen, and performed the following Google search… <em>"how do i contribute to armenian society when i have no talent"</em> (pictured above, taken from my seat on the sofa).
             </p>
 
+            <figure className="my-8">
+              <img
+                src={googleSearchImage}
+                alt="Google search: how do I contribute to Armenian society when I have no talent"
+                className="w-full rounded-lg shadow-lg"
+                loading="lazy"
+              />
+              <figcaption className="mt-3 text-sm text-muted-foreground italic text-center">
+                The Google search that started it all — taken from my seat on the sofa in Yerevan.
+              </figcaption>
+            </figure>
+
             <p>
               Most of the search results were philanthropic in nature, telling me to just "donate" or even "volunteer." Both of which are noble things to do, and I strongly encourage everyone to do so as much and as often as they can.
             </p>
