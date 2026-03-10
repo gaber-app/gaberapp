@@ -78,7 +78,7 @@ export default function OurStory() {
             </p>
 
             <p className="font-medium">I closed the balcony door, grabbed my laptop, and plopped myself onto the eight-foot-long leather sofa in the living room of my four-story walk-up. I flipped up the screen, and performed the following Google search… "how do i contribute to armenian society when i have no talent".
-              <em>"how do i contribute to armenian society when i have no talent"</em> (pictured above, taken from my seat on the sofa).
+              <em></em> (pictured above, taken from my seat on the sofa).
             </p>
 
             <figure className="my-8">
