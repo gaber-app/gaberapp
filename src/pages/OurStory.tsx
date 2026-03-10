@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ParallaxBackground from '@/components/ParallaxBackground';
+import googleSearchImage from '@/assets/google-search-yerevan.jpeg';
 
 export default function OurStory() {
   useEffect(() => {
