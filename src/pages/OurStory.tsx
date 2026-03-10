@@ -24,13 +24,13 @@ export default function OurStory() {
       '@type': 'Article',
       headline: 'Our Story — Gaber',
       description:
-        'Discover how Gaber started — a mission to connect Armenian professionals worldwide.',
+      'Discover how Gaber started — a mission to connect Armenian professionals worldwide.',
       url: 'https://gaberapp.com/our-story',
       publisher: {
         '@type': 'Organization',
         name: 'Gaber',
-        url: 'https://gaberapp.com',
-      },
+        url: 'https://gaberapp.com'
+      }
     });
     document.head.appendChild(script);
 
@@ -83,11 +83,11 @@ export default function OurStory() {
 
             <figure className="my-8">
               <img
-                src={googleSearchImage}
+
                 alt="Google search: how do I contribute to Armenian society when I have no talent"
-                className="w-full rounded-lg shadow-lg"
-                loading="lazy"
-              />
+                className="w-full rounded-lg shadow-lg object-cover border-accent border-double"
+                loading="lazy" src="/lovable-uploads/4f136149-ff3e-4083-a056-442313875197.png" />
+              
               <figcaption className="mt-3 text-sm text-muted-foreground italic text-center">
                 The Google search that started it all — taken from my seat on the sofa in Yerevan.
               </figcaption>
@@ -153,6 +153,6 @@ export default function OurStory() {
       </section>
 
       <Footer />
-    </main>
-  );
+    </main>);
+
 }
