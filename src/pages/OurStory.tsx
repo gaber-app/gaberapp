@@ -59,8 +59,8 @@ export default function OurStory() {
           </h1>
 
           <div className="space-y-6 text-lg leading-relaxed text-foreground/90 sm:text-xl">
-            <p className="font-medium">
-              I returned home from In Vino one night, suddenly angry at the state of my being. It was late, and I was exhausted from walking all day in the late September heat that "strangely" engulfed Yerevan at that time of year. But what did I know about weather patterns in Yerevan? It was my first time back in Armenia after fourteen years.
+            <p className="font-medium">I returned home from In Vino one night, suddenly angry at the state of my being. It was late, and I was exhausted from walking all day in the late September heat that "strangely" engulfed Yerevan at that time of year. But what did I know about weather patterns in Yerevan? It was my first time back in Armenia after fourteen years.
+
             </p>
 
             <p className="font-medium">
