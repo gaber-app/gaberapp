@@ -63,8 +63,10 @@ export default function OurStory() {
 
 </p>
 
-            <p className="font-medium">
-              Immediately upon entering the apartment, I heard the likes of Whitney Houston coming from beyond my dining room table. I opened the door to the balcony and, lo and behold, yet another Armenian with an outrageous set of chops. Somewhere in the distance, they were belting out the most perfect rendition of "I Wanna Dance With Somebody" I had ever heard. This theme followed me throughout my trip.
+            <p className="font-medium">Immediately upon entering the apartment, I heard the likes of Whitney Houston coming from beyond my dining room table. I opened the door to the balcony and, lo and behold, yet another Armenian with an outrageous set of chops. Somewhere in the distance, they were belting out the most perfect rendition of "I Wanna Dance With Somebody" I had ever heard. This theme followed me throughout my trip.
+
+
+
             </p>
 
             <blockquote className="my-10 border-l-4 border-primary px-6 py-4 bg-primary/5 rounded-r-lg">
@@ -84,10 +86,8 @@ export default function OurStory() {
             </p>
 
             <figure className="my-8">
-              <img
-                alt="Google search: how do I contribute to Armenian society when I have no talent"
-                className="w-full rounded-lg shadow-lg object-cover border-accent border-double"
-                loading="lazy" src="/lovable-uploads/4f136149-ff3e-4083-a056-442313875197.png" />
+              <img alt="Google search: how do I contribute to Armenian society when I have no talent" className="w-full rounded-lg shadow-lg object-cover border-accent border-double"
+              loading="lazy" src="/lovable-uploads/4f136149-ff3e-4083-a056-442313875197.png" />
               
               <figcaption className="mt-3 text-sm text-muted-foreground italic text-center">
                 The Google search that started it all — taken from my seat on the sofa in Yerevan.
