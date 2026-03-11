@@ -82,9 +82,6 @@ export default function OurStory() {
 
             <p className="font-medium">I closed the balcony door, grabbed my laptop, and plopped myself onto the eight-foot-long leather sofa in the living room of my four-story walk-up. I flipped up the screen, and performed the following Google search… "how do i contribute to armenian society when i have no talent".
 
-              <em></em> (pictured above, taken from my seat on the sofa).
-            </p>
-
             <figure className="my-8">
               <img alt="Google search: how do I contribute to Armenian society when I have no talent" className="w-full rounded-lg shadow-lg object-cover border-accent border-double"
               loading="lazy" src="/lovable-uploads/4f136149-ff3e-4083-a056-442313875197.png" />
