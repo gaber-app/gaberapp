@@ -80,10 +80,7 @@ export default function OurStory() {
               I thought to myself, <em>"Why am I the only one without a single talent to contribute to greater Armenian society?"</em> That was an exaggeration, of course, but it sure did feel like it.
             </p>
 
-            <p className="font-medium">I closed the balcony door, grabbed my laptop, and plopped myself onto the eight-foot-long leather sofa in the living room of my four-story walk-up. I flipped up the screen, and performed the following Google search… "how do i contribute to armenian society when i have no talent".
-
-              <em></em> (pictured above, taken from my seat on the sofa).
-            </p>
+            <p className="font-medium">I closed the balcony door, grabbed my laptop, and plopped myself onto the eight-foot-long leather sofa in the living room of my four-story walk-up. I flipped up the screen, and performed the following Google search… "how do i contribute to armenian society when i have no talent".</p>
 
             <figure className="my-8">
               <img alt="Google search: how do I contribute to Armenian society when I have no talent" className="w-full rounded-lg shadow-lg object-cover border-accent border-double"
