@@ -43,7 +43,9 @@ export default function OurStory() {
           'Gaber connects Armenian professionals worldwide. Join the waitlist today.'
         );
       }
-      document.head.removeChild(script);
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
     };
   }, []);
 
