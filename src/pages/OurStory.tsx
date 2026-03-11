@@ -126,7 +126,7 @@ export default function OurStory() {
             </blockquote>
 
             <p className="font-medium">
-              In Armenian, Gaber translates to "connections" or "ties." The singular form surfaced so frequently in conversations, both with my mother and friends in Armenia, that pluralizing wasn't just a choice, but an obvious fit.
+              In Armenian, Gaber translates to "connections" or "ties." The singular form of the word surfaced so frequently in conversations, both with my mother and friends in Armenia, that pluralizing wasn't just a choice, but an obvious fit.
             </p>
 
             <p className="font-medium">
