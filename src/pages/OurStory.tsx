@@ -61,7 +61,7 @@ export default function OurStory() {
           <div className="space-y-6 text-lg leading-relaxed text-foreground/90 sm:text-xl">
             <p className="font-medium">I returned home from In Vino one night, suddenly angry at the state of my being. It was late, and I was exhausted from walking all day in the late September heat that "strangely" engulfed Yerevan at that time of year. But what did I know about weather patterns in Yerevan? It was my first time back in Armenia after fourteen years.
 
-            </p>
+</p>
 
             <p className="font-medium">
               Immediately upon entering the apartment, I heard the likes of Whitney Houston coming from beyond my dining room table. I opened the door to the balcony and, lo and behold, yet another Armenian with an outrageous set of chops. Somewhere in the distance, they were belting out the most perfect rendition of "I Wanna Dance With Somebody" I had ever heard. This theme followed me throughout my trip.
