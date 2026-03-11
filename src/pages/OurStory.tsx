@@ -102,7 +102,7 @@ export default function OurStory() {
             </p>
 
             <p className="font-medium">
-              After some time (and due to my own personal circumstances and vested interests), I decided that what we really need as a society is an Armenian dating app. Yes, another one — but one that was inclusive of all Armenians, regardless of gender expression or sexual orientation.
+              After some time (and due to my own personal circumstances and vested interests), I decided that what we really need as a society is an Armenian dating app. Yes, another one - but one that was inclusive of all Armenians, regardless of gender or sexuality.
             </p>
 
             <p className="font-medium">
