@@ -134,7 +134,8 @@ export default function OurStory() {
             </p>
 
             <p className="font-medium">
-              Gaber is my way of paying these connections and influences forward. My team and I have built this for our community, and I can't wait to see what ties of your own you create here.
+              Gaber is how I pay forward the ties that made me who I am. My team and I have built this for our community, and I can't wait to see what ties of your own you create here.
+
             </p>
 
             <blockquote className="my-10 border-l-4 border-primary px-6 py-4 bg-primary/5 rounded-r-lg">
@@ -151,8 +152,7 @@ export default function OurStory() {
               <div>
                 <p className="text-lg font-semibold text-foreground">Tevin Polatian</p>
                 <p className="text-sm text-muted-foreground">Founder</p>
-                <a href="https://www.linkedin.com/in/tevinpolatian/" target="_blank"
-                rel="noopener noreferrer"
+                <a href="https://www.linkedin.com/in/tevinpolatian/" target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 mt-2 text-sm text-primary hover:text-primary/80 transition-colors">
                   
                   Connect on LinkedIn (for now)
