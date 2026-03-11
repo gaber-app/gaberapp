@@ -112,6 +112,7 @@ export default function OurStory() {
 
             <p className="font-medium">
               Back home in January, I had coffee with someone who was introduced to me by a complete stranger on LinkedIn. He was Armenian, which is why I was open to meeting him in the first place. He was networking, as he had just moved from Armenia to the DC area looking for work.
+
             </p>
 
             <p className="font-medium">
@@ -150,8 +151,7 @@ export default function OurStory() {
               <div>
                 <p className="text-lg font-semibold text-foreground">Tevin Polatian</p>
                 <p className="text-sm text-muted-foreground">Founder</p>
-                <a href="https://www.linkedin.com/in/tevinpolatian/"
-                target="_blank"
+                <a href="https://www.linkedin.com/in/tevinpolatian/" target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 mt-2 text-sm text-primary hover:text-primary/80 transition-colors">
                   
