@@ -94,7 +94,7 @@ export default function OurStory() {
             </figure>
 
             <p className="font-medium">
-              Most of the search results were philanthropic in nature, telling me to just "donate" or even "volunteer." Both of which are noble things to do, and I strongly encourage everyone to do so as much and as often as they can.
+              Most of the search results were philanthropic in nature, telling me to "donate" or "volunteer." Both of which are noble things to do, and I strongly encourage everyone to do so as much and as often as they can.
             </p>
 
             <p className="font-medium">
