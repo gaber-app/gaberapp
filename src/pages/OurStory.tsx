@@ -130,7 +130,7 @@ export default function OurStory() {
             </p>
 
             <p className="font-medium">
-              The name, the app, and everything that comes with it is a nod to the Armenians, communities, and organizations who made me who I am today. I am a product of the Washington, D.C. Armenian-American community, of Hamasdegh Armenian School, of my grandparents Vartan and Sosi, of my mother Ankine, my sister Talar, and my best friend Arpa.
+              This app is a love letter to the Washington, D.C. Armenian-American community that raised me, the lessons I learned at Hamasdegh Armenian School, and the foundational love of my grandparents Vartan and Sosi, my mother Ankine, my sister Talar, and my best friend Arpa.
             </p>
 
             <p className="font-medium">
