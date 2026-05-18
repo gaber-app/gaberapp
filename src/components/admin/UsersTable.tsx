@@ -20,7 +20,8 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
-import { X } from 'lucide-react';
+import { Trash2 } from 'lucide-react';
+import { useState } from 'react';
 
 interface Profile {
   id: string;
@@ -37,6 +38,7 @@ interface UsersTableProps {
 
 export function UsersTable({ profiles, userRoles, onRolesUpdate }: UsersTableProps) {
   const { toast } = useToast();
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
   const updateUserRole = async (userId: string, newRole: 'admin' | 'user') => {
     // Delete existing role(s)
@@ -74,22 +76,24 @@ export function UsersTable({ profiles, userRoles, onRolesUpdate }: UsersTablePro
     }
   };
 
-  const removeUserRole = async (userId: string) => {
-    const { error } = await supabase
-      .from('user_roles')
-      .delete()
-      .eq('user_id', userId);
+  const deleteUser = async (userId: string) => {
+    setDeletingId(userId);
+    const { data, error } = await supabase.functions.invoke('delete-user', {
+      body: { user_id: userId },
+    });
 
-    if (error) {
+    setDeletingId(null);
+
+    if (error || (data && data.error)) {
       toast({
         title: 'Error',
-        description: 'Failed to remove user role.',
+        description: (data && data.error) || error?.message || 'Failed to delete user.',
         variant: 'destructive',
       });
     } else {
       toast({
         title: 'Success',
-        description: 'User role removed successfully.',
+        description: 'User deleted successfully.',
       });
       onRolesUpdate();
     }
@@ -136,36 +140,36 @@ export function UsersTable({ profiles, userRoles, onRolesUpdate }: UsersTablePro
                   <TableCell>{new Date(profile.created_at).toLocaleDateString()}</TableCell>
                   <TableCell>{new Date(profile.updated_at).toLocaleDateString()}</TableCell>
                   <TableCell className="text-right">
-                    {userRoles[profile.id] ? (
-                      <AlertDialog>
+                    <AlertDialog>
                         <AlertDialogTrigger asChild>
                           <Button
                             variant="ghost"
                             size="icon"
                             className="h-8 w-8 text-muted-foreground hover:text-destructive"
-                            title="Remove role"
+                            title="Delete user"
+                            disabled={deletingId === profile.id}
                           >
-                            <X className="h-4 w-4" />
+                            <Trash2 className="h-4 w-4" />
                           </Button>
                         </AlertDialogTrigger>
                         <AlertDialogContent>
                           <AlertDialogHeader>
-                            <AlertDialogTitle>Remove user role?</AlertDialogTitle>
+                            <AlertDialogTitle>Delete this user?</AlertDialogTitle>
                             <AlertDialogDescription>
-                              This will remove the "{userRoles[profile.id]}" role from {profile.email}. They will lose all permissions tied to that role.
+                              This permanently deletes {profile.email}, including their account, profile, and all assigned roles. This action cannot be undone.
                             </AlertDialogDescription>
                           </AlertDialogHeader>
                           <AlertDialogFooter>
                             <AlertDialogCancel>Cancel</AlertDialogCancel>
-                            <AlertDialogAction onClick={() => removeUserRole(profile.id)}>
-                              Remove role
+                            <AlertDialogAction
+                              onClick={() => deleteUser(profile.id)}
+                              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                            >
+                              Delete user
                             </AlertDialogAction>
                           </AlertDialogFooter>
                         </AlertDialogContent>
                       </AlertDialog>
-                    ) : (
-                      <span className="text-xs text-muted-foreground">—</span>
-                    )}
                   </TableCell>
                 </TableRow>
               ))
