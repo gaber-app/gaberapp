@@ -35,10 +35,16 @@ Deno.serve(async (req) => {
   }
 
   try {
-    // Get client IP from headers
-    const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || 
-                     req.headers.get("cf-connecting-ip") || 
-                     "unknown";
+    // Get client IP from platform-injected headers (not spoofable).
+    // Fall back to the rightmost x-forwarded-for entry (appended by the trusted proxy)
+    // rather than the leftmost (which is user-controlled).
+    const xff = req.headers.get("x-forwarded-for");
+    const xffTrusted = xff ? xff.split(",").map(s => s.trim()).filter(Boolean).pop() : null;
+    const clientIp =
+      req.headers.get("cf-connecting-ip") ||
+      req.headers.get("x-real-ip") ||
+      xffTrusted ||
+      "unknown";
 
     console.log(`Subscription request from IP: ${clientIp}`);
 
