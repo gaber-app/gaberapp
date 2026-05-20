@@ -30,7 +30,17 @@ export default function Admin() {
   }, [location.pathname, navigate]);
 
   const checkAdmin = async () => {
-    const { data: { session } } = await supabase.auth.getSession();
+    const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+    
+    if (sessionError) {
+      toast({
+        title: "Session Error",
+        description: "Please sign in again to access the admin area.",
+        variant: "destructive",
+      });
+      navigate('/auth');
+      return;
+    }
     
     if (!session) {
       navigate('/auth');
@@ -39,12 +49,23 @@ export default function Admin() {
 
     setUserEmail(session.user.email || '');
 
-    const { data: roleData } = await supabase
+    const { data: roleData, error: roleError } = await supabase
       .from('user_roles')
       .select('role')
       .eq('user_id', session.user.id)
       .eq('role', 'admin')
       .maybeSingle();
+
+    if (roleError) {
+      console.error('Admin role check failed:', roleError);
+      toast({
+        title: "Access Check Failed",
+        description: "Your admin access could not be verified. Please try signing in again.",
+        variant: "destructive",
+      });
+      navigate('/auth');
+      return;
+    }
 
     if (!roleData) {
       toast({
